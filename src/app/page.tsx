@@ -26,8 +26,8 @@ const HeroSection: React.FC = () => {
             Я талантливый разработчик из Москвы. Умею создавать красивые и доступные сайты. За моими плечами более 4-х лет кодинга и несколько проектов.
           </p>
           <div className={styles['cta-container']}>
-            <Button type="primary" size="large">View Projects</Button>
-            <Button type="secondary" size="large">View Projects</Button>
+            <Button type="primary" size="large">View projects</Button>
+            <Button as="a" type="secondary" size="large">Hire me</Button>
           </div>
         </div>
       </div>

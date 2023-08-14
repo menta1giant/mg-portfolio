@@ -20,8 +20,8 @@
   align-self: flex-start;
   box-shadow: var(--button-box-shadow);
 
-  transition-property: background-color, color, box-shadow, transform;
-  transition-duration: .3s;
+  transition-property: background-color, color, box-shadow, transform, filter, letter-spacing;
+  transition-duration: .2s;
 
   cursor: pointer;
 
@@ -45,7 +45,7 @@
   }
 
   &--primary {
-    background: $accent-500;
+    background-color: $accent-500;
 
     color: var(--primary-button-color);
 
@@ -55,7 +55,7 @@
   }
 
   &--primary-green {
-    background: $secondary-700;
+    background-color: $secondary-700;
 
     color: var(--primary-button-color);
   }
@@ -70,12 +70,12 @@
   }
 
   &--secondary {
-    background: $white-200;
+    background-color: $white-200;
     color: $white-700;
   }
 
-  &::after {
-    background: #fff;
+  /* &::after {
+    background-color: #fff;
     content: "";
     height: 155px;
     left: -75px;
@@ -85,12 +85,39 @@
     transform: rotate(35deg);
     transition: all 700ms cubic-bezier(0.19, 1, 0.22, 1);
     width: 50px;
-  }
+  } */
 
   &:hover {
-    &::after {
+    color: var(--primary-button-color);
+
+    /* &::after {
       left: 120%;
       transition: all 900ms cubic-bezier(0.19, 1, 0.22, 1);
+    } */
+
+    span {
+      height: 300%;
+      width: 300%;
     }
+  }
+
+  &:active {
+    letter-spacing: 2px;
+  }
+
+  span {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+    transform: translate(-50%, -50%);
+    background-color: $primary-700;
+    height: 0%;
+    width: 0%;
+  }
+
+  &>div {
+    position: relative;
+    z-index: 2;
   }
 }
