@@ -26,6 +26,8 @@
 
   &__left {
     img {
+      display: block;
+      margin: auto;
       object-fit: cover;
     }
   }

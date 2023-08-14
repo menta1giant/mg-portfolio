@@ -12,7 +12,7 @@ const HeroSection: React.FC = () => {
           <Image
             src="/hero-image.svg"
             alt="Next.js Logo"
-            width={1000}
+            width={472}
             height={416}
             priority
           />

@@ -26,8 +26,8 @@ const handleChange = (
   const btn: HTMLButtonElement | HTMLAnchorElement = e.currentTarget;
 
   var parentOffset = btn.getBoundingClientRect(),
-      relX = e.pageX - parentOffset.left,
-      relY = e.pageY - parentOffset.top;
+      relX = e.clientX - parentOffset.left,
+      relY = e.clientY - parentOffset.top;
   
   const btnSpan = btn.querySelector('span');
 
