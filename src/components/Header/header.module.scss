@@ -1,0 +1,47 @@
+
+
+.header {
+  display: flex;
+  align-items: center;
+
+  padding-block: 2.25rem;
+}
+
+.logo {
+  width: 20px;
+  height: 40px;
+}
+
+.navigation {
+  @include text-medium;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+
+  color: $white-500;
+  font-family: var(--font-mono);
+
+  nav, ul {
+    @include text-heading;
+
+    display: inline-flex;
+
+    white-space: pre;
+    
+    li {
+      font-weight: $fw-medium;
+    }
+  }
+
+  span {
+    white-space: pre;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: .5rem;
+
+  margin-left: auto;
+}

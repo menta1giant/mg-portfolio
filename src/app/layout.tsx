@@ -1,4 +1,6 @@
-import './globals.css'
+import './globals.scss'
+import 'the-new-css-reset/css/reset.css'
+import Header from '@/components/Header/Header'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
@@ -16,7 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body id="light">
+        <Header/>
+        <main>
+          {children}
+        </main>
+      </body>
     </html>
   )
 }

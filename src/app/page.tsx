@@ -1,95 +1,60 @@
 import Image from 'next/image'
-import styles from './page.module.css'
+import Link from 'next/link'
+import styles from './page.module.scss'
+import Button from '@/components/Button/Button'
 
-export default function Home() {
+const HeroSection: React.FC = () => {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <section className={styles['hero-section']}>
+      <span className={`text-monospace ${styles['benefit-proposition']}`}>ПОСТРОИМ КРУТОТУ ВМЕСТЕ</span>
+      <div className={styles['hero-section-main']}>
+        <div className={styles['hero-section__left']}>
+          <Image
+            src="/hero-image.svg"
+            alt="Next.js Logo"
+            width={1000}
+            height={416}
+            priority
+          />
+        </div>
+        <div className={styles['hero-section__right']}>
+          <div>
+            <h1 className="section-heading">Mikhail Gostev</h1>
+            <span className="tag">Fullstack Web Developer</span>
+          </div>
+          <p>
+            Я талантливый разработчик из Москвы. Умею создавать красивые и доступные сайты. За моими плечами более 4-х лет кодинга и несколько проектов.
+          </p>
+          <div className={styles['cta-container']}>
+            <Button type="primary" size="large">View Projects</Button>
+            <Button type="secondary" size="large">View Projects</Button>
+          </div>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className={styles['hero-section-features']}>
+        <article className={styles['hero-section-feature']}>
+          <span className={styles['hero-section-feature__title']}>3+ years of coding </span>
+          <span className={styles['hero-section-feature__description']}>Including full-time employment</span>
+        </article>
+        <article className={styles['hero-section-feature']}>
+          <span className={styles['hero-section-feature__title']}>Working with</span>
+          <span className={styles['hero-section-feature__description']}>Vue, React, NodeJS</span>
+        </article>
+        <article className={styles['hero-section-feature']}>
+          <span className={styles['hero-section-feature__title']}>Versatile skillset</span>
+          <span className={styles['hero-section-feature__description']}>With accordance to newest trends</span>
+        </article>
       </div>
+    </section>
+  )
+};
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+const Home: React.FC = () => {
+  return (
+    <>
+      <HeroSection></HeroSection>
+    </>
   )
 }
+
+export default Home

@@ -1,3 +1,80 @@
+@function display-font-size($width) {
+  @return calc(($width - $container-horizontal-padding-desktop * 2) / 23 * 1.66)
+}
+
+.benefit-proposition {
+  font-weight: $fw-bold;
+  font-size: clamp(2rem, display-font-size(100vw), display-font-size($desktop-breakpoint));
+  background: var(--gradient-dark-hero-section, radial-gradient(12397.82% 99.62% at 7.02% 77.59%, #52848F 2.08%, #54A986 28.65%, #2C9C6D 46.88%, #397F8E 66.15%, #2B5963 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+
+  padding-top: 2.5rem;
+
+  &-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+
+  &__left {
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    p {
+      @include text-extra-large;
+    }
+  }
+
+  &-features {
+    display: flex;
+  }
+
+  &-feature {
+    @include text-display;
+    @include fw-medium;
+
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    align-items: center;
+    gap: .5rem;
+
+    &:nth-child(n+2) {
+      border-left: 2px solid $primary-700-alpha-10;
+    }
+
+    &__title {
+      @include text-large;
+    }
+
+    &__description {
+      @include text-small;
+
+      color: $white-500;
+    }
+  }
+}
+
+.cta-container {
+  display: flex;
+  gap: 1rem;
+}
+
 .main {
   display: flex;
   flex-direction: column;

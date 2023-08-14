@@ -1,0 +1,44 @@
+.text-small {
+  @include text-small;
+}
+
+.text-medium {
+  @include text-medium;
+}
+
+.text-large {
+  @include text-large;
+}
+
+.text-extra-large {
+  @include text-extra-large;
+}
+
+.text-h2 {
+  @include text-h2;
+}
+
+.text-h1 {
+  @include text-h1;
+}
+
+.text-heading {
+  @include text-heading;
+}
+
+.text-monospace {
+  @include text-monospace;
+}
+
+.section-heading {
+  @include text-heading;
+  @include fw-semi-bold;
+  @include text-h1;
+}
+
+.tag {
+  @include text-medium;
+  @include fw-semi-bold;
+
+  color: $accent-500;
+}

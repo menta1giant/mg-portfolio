@@ -1,0 +1,91 @@
+$ff-primary: Inter, sans-serif;
+$ff-accent: Roboto, sans-serif;
+$ff-cta: 'Roboto Flex', sans-serif;
+$ff-mono: ui-monospace, 'Roboto Mono', monospace;
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semi-bold: 600;
+$fw-bold: 700;
+
+$fs-small: 1rem;
+$fs-medium: 1.25rem;
+$fs-large: 1.5rem;
+$fs-extra-large: 1.75rem;
+$fs-h2: 2.25rem;
+$fs-h1: 3rem;
+
+$lh-small: 1.4;
+$lh-medium: 1.5;
+$lh-large: 1.4;
+$lh-extra-large: 1.4;
+$lh-h2: 1.3;
+$lh-h1: 1.25;
+$lh-body: 1.6;
+
+@mixin text-small {
+  font-size: $fs-small;
+  line-height: $lh-small;
+}
+
+@mixin text-medium {
+  font-size: $fs-medium;
+  line-height: $lh-medium;
+}
+
+@mixin text-large {
+  font-size: $fs-large;
+  line-height: $lh-large;
+}
+
+@mixin text-extra-large {
+  font-size: $fs-extra-large;
+  line-height: $lh-extra-large;
+}
+
+@mixin text-h2 {
+  font-size: $fs-h2;
+  line-height: $lh-h2;
+}
+
+@mixin text-h1 {
+  font-size: $fs-h1;
+  line-height: $lh-h1;
+}
+
+@mixin fw-light {
+  font-weight: $fw-light;
+}
+
+@mixin fw-medium {
+  font-weight: $fw-medium;
+}
+
+@mixin fw-semi-bold {
+  font-weight: $fw-semi-bold;
+}
+
+@mixin fw-bold {
+  font-weight: $fw-bold;
+}
+
+@mixin text-heading {
+  color: var(--heading-color);
+}
+
+@mixin text-button {
+  font-family: $ff-cta;
+  font-weight: $fw-bold;
+
+  text-transform: uppercase;
+  letter-spacing: .05em; 
+}
+
+@mixin text-display {
+  font-family: $ff-accent;
+}
+
+@mixin text-monospace {
+  font-family: $ff-mono;
+}
