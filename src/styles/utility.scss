@@ -88,3 +88,15 @@
 .inline-flex {
   display: inline-flex;
 }
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+  .mobile {
+    display: none;
+  }
+}

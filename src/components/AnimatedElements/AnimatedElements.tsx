@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { gsap } from "gsap"
 import { useEffect, useRef } from 'react'
 import './animated-elements.scss'
-import { dispatchCustomEvent } from '@/utils/customEvent'
+import { dispatchCustomEvent, LOGO_CLICKED_EVENT, PACKAGE_IMPORTED_EVENT, TYPEWRITER_FINISHED_EVENT, LETTERS_SCRAMBLED_EVENT } from '@/utils/customEvent'
 
 const HeroSectionAnimatedElements: React.FC = () => {
   const mockCursor = useRef<HTMLImageElement>(null);
@@ -35,7 +35,9 @@ const HeroSectionAnimatedElements: React.FC = () => {
       onComplete: () => {
         mockCursorPulse.current?.classList.add('expand');
 
-        dispatchCustomEvent('logo-clicked');
+        const isDesktop = window.matchMedia("(min-width: 600px)").matches;
+        console.log(isDesktop);
+        isDesktop ? dispatchCustomEvent(LOGO_CLICKED_EVENT) : dispatchCustomEvent(PACKAGE_IMPORTED_EVENT);
 
         setTimeout(() => {
           mockCursorPulse.current?.classList.remove('expand');
@@ -65,7 +67,7 @@ const HeroSectionAnimatedElements: React.FC = () => {
           mockEnterElem.classList.add('mock-enter--active');
           mockCursorPulse.current?.classList.add('expand', 'expand-enter');
 
-          dispatchCustomEvent('mg-package-imported');
+          dispatchCustomEvent(PACKAGE_IMPORTED_EVENT);
           setTimeout(() => {
             mockCursorPulse.current?.classList.remove('expand', 'expand-enter');
             mockEnterElem.classList.remove('mock-enter--active');
@@ -91,7 +93,7 @@ const HeroSectionAnimatedElements: React.FC = () => {
 
     moveMockCursor(mockCursor.current!, logo);
 
-    document.addEventListener('typewriter-finished', clickMockEnter);
+    document.addEventListener(TYPEWRITER_FINISHED_EVENT, clickMockEnter);
   }
 
   useEffect(()=>{
@@ -99,7 +101,7 @@ const HeroSectionAnimatedElements: React.FC = () => {
 
     logo.addEventListener('click', logoClickHandler);
 
-    document.addEventListener('letters-scrambled', fadeUpHeroSection);
+    document.addEventListener(LETTERS_SCRAMBLED_EVENT, fadeUpHeroSection);
 
     logoClickHandler();
   }, [])

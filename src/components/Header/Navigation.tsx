@@ -2,7 +2,7 @@
 
 import { useRef, useEffect } from 'react'
 import styles from './header.module.scss'
-import { dispatchCustomEvent } from '@/utils/customEvent'
+import { dispatchCustomEvent, LOGO_CLICKED_EVENT, TYPEWRITER_FINISHED_EVENT } from '@/utils/customEvent'
 import { usePathname } from 'next/navigation'
 
 export default function Navigation() {
@@ -74,7 +74,7 @@ export default function Navigation() {
               resolve(true);
             }, 800)
 
-            dispatchCustomEvent('typewriter-finished');
+            dispatchCustomEvent(TYPEWRITER_FINISHED_EVENT);
           }, 150)
 
           return;
@@ -98,7 +98,7 @@ export default function Navigation() {
   }
 
   useEffect(() => {
-    document.addEventListener('logo-clicked', initiateTypewriter);
+    document.addEventListener(LOGO_CLICKED_EVENT, initiateTypewriter);
 
     if (pathname !== '/') {
       showNavigation();

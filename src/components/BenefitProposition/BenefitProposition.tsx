@@ -2,7 +2,7 @@
 
 import './benefit-proposition.scss'
 import { useEffect, useRef } from 'react'
-import { dispatchCustomEvent } from '@/utils/customEvent'
+import { dispatchCustomEvent, PACKAGE_IMPORTED_EVENT, LETTERS_SCRAMBLED_EVENT } from '@/utils/customEvent'
 
 const BenefitProposition: React.FC = () => {
   const textContainer = useRef<HTMLDivElement>(null);
@@ -28,7 +28,7 @@ const BenefitProposition: React.FC = () => {
       
       if(iteration >= textContainer.current!.dataset.value!.length){ 
         interval && clearInterval(interval);
-        dispatchCustomEvent('letters-scrambled');
+        dispatchCustomEvent(LETTERS_SCRAMBLED_EVENT);
       }
       
       iteration += (1/3);
@@ -36,7 +36,7 @@ const BenefitProposition: React.FC = () => {
   }
 
   useEffect(() => {
-    document.addEventListener('mg-package-imported', initiateScramblePhrase)
+    document.addEventListener(PACKAGE_IMPORTED_EVENT, initiateScramblePhrase)
   })
 
   return (

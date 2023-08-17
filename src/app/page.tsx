@@ -5,6 +5,8 @@ import Button from '@/components/Button/Button'
 import BenefitProposition from '@/components/BenefitProposition/BenefitProposition'
 import AnimatedElements from '@/components/AnimatedElements/AnimatedElements'
 
+const LOGO_SIZE = 32;
+
 const HeroSection: React.FC = () => {
   return (
     <>
@@ -41,7 +43,40 @@ const HeroSection: React.FC = () => {
           </article>
           <article className={styles['hero-section-feature']}>
             <span className={styles['hero-section-feature__title']}>Working with</span>
-            <span className={styles['hero-section-feature__description']}>Vue, React, NodeJS</span>
+            <span className={styles['hero-section-feature__description']}>
+              <ul>
+                <li>
+                  <Image
+                    src="/vuejs-logo.svg"
+                    alt="Vue.js Logo"
+                    title="Vue.js"
+                    width={LOGO_SIZE}
+                    height={LOGO_SIZE}
+                    priority
+                  />
+                </li>
+                <li>
+                  <Image
+                    src="/react-logo.svg"
+                    alt="React Logo"
+                    title="React"
+                    width={LOGO_SIZE}
+                    height={LOGO_SIZE}
+                    priority
+                  />
+                </li>
+                <li>
+                  <Image
+                    src="/ts-logo.svg"
+                    alt="Typescript Logo"
+                    title="Typescript"
+                    width={LOGO_SIZE}
+                    height={LOGO_SIZE}
+                    priority
+                  />
+                </li>
+              </ul>
+            </span>
           </article>
           <article className={styles['hero-section-feature']}>
             <span className={styles['hero-section-feature__title']}>Versatile skillset</span>
