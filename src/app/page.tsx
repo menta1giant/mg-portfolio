@@ -80,7 +80,7 @@ const HeroSection: React.FC = () => {
           </article>
           <article className={styles['hero-section-feature']}>
             <span className={styles['hero-section-feature__title']}>Versatile skillset</span>
-            <span className={styles['hero-section-feature__description']}>With accordance to newest trends</span>
+            <span className={styles['hero-section-feature__description']}>In accordance with the latest trends</span>
           </article>
         </div>
       </section>
