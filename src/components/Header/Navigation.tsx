@@ -46,8 +46,6 @@ export default function Navigation() {
   }
 
   function createTypewriterEffect(node:Element, speed:number) {
-    console.log(speed);
-
     return new Promise(resolve => {
       const text = node.textContent!;
       const parent = node.parentNode;

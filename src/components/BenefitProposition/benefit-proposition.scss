@@ -3,6 +3,8 @@
 }
 
 .benefit-proposition {
+  width: 100%;
+
   font-weight: $fw-bold;
   font-size: clamp(4rem, display-font-size(100vw), display-font-size($desktop-breakpoint));
   color: $white-400;
@@ -20,7 +22,7 @@
   }
 
   span {
-    word-wrap: break-word;
+    white-space: pre-line;
   }
 }
 

@@ -36,7 +36,7 @@ const HeroSectionAnimatedElements: React.FC = () => {
         mockCursorPulse.current?.classList.add('expand');
 
         const isDesktop = window.matchMedia("(min-width: 600px)").matches;
-        console.log(isDesktop);
+
         isDesktop ? dispatchCustomEvent(LOGO_CLICKED_EVENT) : dispatchCustomEvent(PACKAGE_IMPORTED_EVENT);
 
         setTimeout(() => {
@@ -79,7 +79,6 @@ const HeroSectionAnimatedElements: React.FC = () => {
   }
 
   function fadeUpHeroSection() {
-    console.log('a');
     const nodes = document.querySelectorAll('.fade-up-later');
 
     nodes.forEach(node => {
