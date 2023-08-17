@@ -16,8 +16,9 @@
 
   --primary-button-color: #{$white-100};
 
-  position: relative;
+  text-align: center;
   align-self: flex-start;
+  position: relative;
   box-shadow: var(--button-box-shadow);
 
   transition-property: background-color, color, box-shadow, transform, filter, letter-spacing;

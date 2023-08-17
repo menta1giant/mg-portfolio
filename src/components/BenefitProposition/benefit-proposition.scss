@@ -4,8 +4,9 @@
 
 .benefit-proposition {
   font-weight: $fw-bold;
-  font-size: clamp(2rem, display-font-size(100vw), display-font-size($desktop-breakpoint));
+  font-size: clamp(4rem, display-font-size(100vw), display-font-size($desktop-breakpoint));
   color: $white-400;
+  text-align: center;
   
   &--active {
     background: var(--gradient-dark-hero-section, linear-gradient(85deg, #52848F 2.08%, #54A986 28.65%, #2C9C6D 46.88%, #397F8E 66.15%, #2B5963 100%));
@@ -16,6 +17,10 @@
     text-fill-color: transparent;
     background-size: 500% auto;
     animation: backgroundMove 20s ease-in-out infinite alternate;
+  }
+
+  span {
+    word-wrap: break-word;
   }
 }
 
