@@ -21,7 +21,8 @@ const BenefitProposition: React.FC = () => {
     interval = setInterval(() => {
       let newScrambledPart = phrase.slice(Math.floor(iteration))
         .split("")
-        .map(() => {
+        .map((letter, index) => {
+          if (phrase[index + Math.floor(iteration)] === ' ') return ' '
           return phrase[Math.floor(Math.random() * phrase.length)]
         })
         .join("");
