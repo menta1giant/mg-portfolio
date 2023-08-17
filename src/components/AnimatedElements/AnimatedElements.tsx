@@ -86,15 +86,16 @@ const HeroSectionAnimatedElements: React.FC = () => {
     })
   }
 
-  useEffect(()=>{
+  function logoClickHandler() {
     const logo = document.getElementById("logo")!;
 
-    function logoClickHandler() {
-      console.log('as');
-      moveMockCursor(mockCursor.current!, logo!);
+    moveMockCursor(mockCursor.current!, logo);
 
-      document.addEventListener('typewriter-finished', clickMockEnter);
-    }
+    document.addEventListener('typewriter-finished', clickMockEnter);
+  }
+
+  useEffect(()=>{
+    const logo = document.getElementById("logo")!;
 
     logo.addEventListener('click', logoClickHandler);
 

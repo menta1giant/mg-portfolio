@@ -3,16 +3,31 @@
 import { useRef, useEffect } from 'react'
 import styles from './header.module.scss'
 import { dispatchCustomEvent } from '@/utils/customEvent'
+import { usePathname } from 'next/navigation'
 
 export default function Navigation() {
   const navigation = useRef<HTMLDivElement>(null)
+  const pathname = usePathname()
 
-  function initiateTypewriter() {
-    const textNodes = navigation.current?.querySelectorAll('span, a')!;
+  function getNavigationNodes() {
+    return navigation.current?.querySelectorAll('span, a')!;
+  }
 
+  function hideNavigation(textNodes:NodeListOf<Element>) {
     textNodes.forEach(node => {
       node.classList.add('visually-hidden');
     })
+  }
+
+  function showNavigation() {
+    navigation.current?.classList.remove('visually-hidden');
+  }
+
+  function initiateTypewriter() {
+    showNavigation();
+    const textNodes = getNavigationNodes();
+
+    hideNavigation(textNodes);
 
     const speeds = [...(new Array(6).fill(23)), 12];
 
@@ -84,23 +99,27 @@ export default function Navigation() {
 
   useEffect(() => {
     document.addEventListener('logo-clicked', initiateTypewriter);
-  })
+
+    if (pathname !== '/') {
+      showNavigation();
+    }
+  }, [])
 
   return (
-    <div className={styles.navigation} ref={navigation}>
-      <span className="visually-hidden">import </span>
-      <span className="text-large text-heading visually-hidden">{ `{ ` }</span>
+    <div className={`visually-hidden ${styles.navigation}`} ref={navigation}>
+      <span>import </span>
+      <span className="text-large text-heading">{ `{ ` }</span>
       <nav className="text-large text-heading">
         <ul>
-          <li><a className="visually-hidden">jobExperience, </a></li>
-          <li><a className="visually-hidden">hardSkills, </a></li>
-          <li><a className="visually-hidden">softSkills </a></li>
+          <li><a>jobExperience, </a></li>
+          <li><a>hardSkills, </a></li>
+          <li><a>softSkills </a></li>
         </ul>
       </nav>
-      <span className="text-large text-heading visually-hidden">{ `} `}</span>
+      <span className="text-large text-heading">{ `} `}</span>
       <div className="nowrap inline-flex">
-        <span className="visually-hidden">from </span>
-        <span id="package-name" className="text-heading text-large visually-hidden">&quot;MikhailGostev&quot;</span>
+        <span>from </span>
+        <span id="package-name" className="text-heading text-large">&quot;MikhailGostev&quot;</span>
       </div>
     </div>
   )
