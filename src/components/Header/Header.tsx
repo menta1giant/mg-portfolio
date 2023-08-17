@@ -14,7 +14,7 @@ export default function Header() {
         height={48}
         priority
       />
-      <div className="desktop"><Navigation/></div>
+      <div><Navigation/></div>
       <div className={styles.buttons}>
         <Button type="primary-green" className="mobile">{`>`}</Button>
         <Button type="primary-green" className="desktop">GET IN TOUCH</Button>

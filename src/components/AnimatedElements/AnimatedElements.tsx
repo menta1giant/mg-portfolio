@@ -30,12 +30,12 @@ const HeroSectionAnimatedElements: React.FC = () => {
     gsap.to('.cursor', {
       left: translateX,
       top: translateY,
-      duration: 0.5, // Animation duration in seconds
-      ease: "power2.out", // Easing function
+      duration: 0.5,
+      ease: "power2.out",
       onComplete: () => {
         mockCursorPulse.current?.classList.add('expand');
 
-        const isDesktop = window.matchMedia("(min-width: 600px)").matches;
+        const isDesktop = window.matchMedia("(min-width: 0px)").matches;
 
         isDesktop ? dispatchCustomEvent(LOGO_CLICKED_EVENT) : dispatchCustomEvent(PACKAGE_IMPORTED_EVENT);
 
