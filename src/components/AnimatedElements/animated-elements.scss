@@ -1,0 +1,99 @@
+#mock-cursor {
+  position: fixed;
+
+  left: 128px;
+  top: -96px;
+}
+
+.mock-cursor-pulse {
+  position: fixed;
+
+  left: 128px;
+  top: -96px;
+
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.mock-cursor-pulse::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border: 8px solid gray;
+  border-radius: 50%;
+  top: -8px;
+  left: 0px;
+  animation: cursorAnim2 .3s infinite alternate;
+}
+
+@keyframes cursorAnim {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: .7;
+  }
+}
+
+@keyframes cursorAnim2 {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: .4;
+  }
+}
+
+.expand::after {
+  animation: cursorAnim3 1.5s forwards;
+  border: 1px solid $accent-300;
+
+  visibility: visible;
+}
+
+.expand-enter {
+  scale: 1.75;
+  translate: 20px 24px;
+
+  &::after {
+    border-color: $primary-500;
+  }
+}
+
+@keyframes cursorAnim3 {
+  0% {
+    scale: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    scale: 5;
+    opacity: 0;
+  }
+}
+
+.mock-enter {
+  @include text-extra-small;
+  @include fw-semi-bold;
+
+  position: fixed;
+
+  background: white;
+  padding: .5rem 1rem;
+  border: 1px solid rgb(0,0,0,.7);
+  border-radius: 10px;
+  box-shadow: 0 4px #999;
+
+  z-index: 10;
+
+  &--active {
+    box-shadow: 0 1px #3a3a3a;
+    translate: 0px 1px;
+  }
+}

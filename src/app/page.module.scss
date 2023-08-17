@@ -1,16 +1,3 @@
-@function display-font-size($width) {
-  @return calc(($width - $container-horizontal-padding-desktop * 2) / 23 * 1.66)
-}
-
-.benefit-proposition {
-  font-weight: $fw-bold;
-  font-size: clamp(2rem, display-font-size(100vw), display-font-size($desktop-breakpoint));
-  background: var(--gradient-dark-hero-section, radial-gradient(12397.82% 99.62% at 7.02% 77.59%, #52848F 2.08%, #54A986 28.65%, #2C9C6D 46.88%, #397F8E 66.15%, #2B5963 100%));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .hero-section {
   display: flex;
   flex-direction: column;

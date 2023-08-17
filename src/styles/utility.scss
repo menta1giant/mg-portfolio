@@ -30,6 +30,10 @@
   @include text-monospace;
 }
 
+.text-white-400 {
+  color: $white-400;
+}
+
 .section-heading {
   @include text-heading;
   @include fw-semi-bold;
@@ -41,4 +45,46 @@
   @include fw-semi-bold;
 
   color: $accent-500;
+}
+
+.fade-in {
+  animation: fadeIn .6s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.visually-hidden {
+  visibility: hidden;
+}
+
+.fade-up-later {
+  @extend .visually-hidden;
+}
+
+.fade-up {
+  animation: fadeUp .6s;
+}
+
+@keyframes fadeUp {
+  0% { 
+    opacity: 0;
+    translate: 0 20%;
+  }
+  50% { 
+    opacity: 1;
+  }
+  100% { 
+    translate: 0 0;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.inline-flex {
+  display: inline-flex;
 }

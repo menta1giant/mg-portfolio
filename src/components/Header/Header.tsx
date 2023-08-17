@@ -1,21 +1,23 @@
 import styles from './header.module.scss'
 import Button from '@/components/Button/Button'
+import Navigation from './Navigation'
 import Image from 'next/image'
 
 export default function Header() {
   return (
     <header className={styles.header}>
       <Image
+        id="logo"
         src="/logo.svg"
         alt="Logo"
         width={48}
         height={48}
         priority
       />
-      <div className={styles.navigation}><span>import </span><nav className="text-large"><span>{ `{ ` }</span><ul><li>jobExperience, </li><li>hardSkills, </li><li>softSkills</li></ul><span>{ ` } `}</span></nav><span>from </span><span className="text-heading text-large">&quot;MikhailGostev&quot;</span></div>
+      <Navigation/>
       <div className={styles.buttons}>
-        <Button type="primary-green">Hello</Button>
-        <Button type="transparent-green">T</Button>
+        <Button type="primary-green">GET IN TOUCH</Button>
+        <Button type="transparent-green">TH</Button>
         <Button type="transparent-green">ENG</Button>
       </div>
     </header>

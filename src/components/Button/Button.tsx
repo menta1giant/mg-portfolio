@@ -11,6 +11,7 @@ export type AsElement = 'button' | 'a'
 
 export interface ButtonProps {
   children: ReactNode;
+  className?: string,
   size?: ButtonSizes;
   as?: AsElement;
   onClick?: () => void;
@@ -31,21 +32,19 @@ const handleChange = (
   
   const btnSpan = btn.querySelector('span');
 
-  console.dir({parentOffset, relX, relY, btnSpan})
-
   if (btnSpan) {
     btnSpan.style.top = `${relY}px`;
     btnSpan.style.left = `${relX}px`;
   }
 
 }
-const Button: React.FC<CommonButtonProps> = ({ children, onClick, size='medium', as="button", type='primary' }) => {
+const Button: React.FC<CommonButtonProps> = ({ children, onClick, className='', size='medium', as="button", type='primary' }) => {
   const that = {
     as
   }
 
   return (
-    <that.as className={`mg-button mg-button--${ size } mg-button--${ type }`} onClick={onClick} onMouseEnter={handleChange} onMouseLeave={handleChange}>
+    <that.as className={`mg-button mg-button--${ size } mg-button--${ type } ${className}`} onClick={onClick} onMouseEnter={handleChange} onMouseLeave={handleChange}>
       <span></span>
       <div>{children}</div>
     </that.as>

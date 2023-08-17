@@ -90,6 +90,8 @@ html:has(#dark) {
 }
 
 header, main, footer {
+  position: relative;
+
   max-width: $desktop-breakpoint;
   padding: 0 $container-horizontal-padding-desktop;
   margin: auto;

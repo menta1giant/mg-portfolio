@@ -2,8 +2,7 @@
 
 .header {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 
   padding-block: 2.25rem;
 }
@@ -16,8 +15,8 @@
 
 .navigation {
   @include text-medium;
-
   display: flex;
+
   flex-wrap: wrap;
   align-items: flex-end;
 
@@ -27,7 +26,8 @@
   nav, ul {
     @include text-heading;
 
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
 
     white-space: pre;
     
@@ -38,6 +38,23 @@
 
   span {
     white-space: pre;
+  }
+
+  span, a {
+    position: relative;
+  }
+
+  @media screen and (max-width: $laptop-breakpoint) {
+    display: block;
+
+    nav, ul {
+      display: block;
+
+      li {
+        display: block;
+        margin-left: 2ch
+      }
+    }
   }
 }
 
