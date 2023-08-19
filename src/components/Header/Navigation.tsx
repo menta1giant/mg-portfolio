@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useMemo } from 'react'
 import styles from './header.module.scss'
 import { LOGO_CLICKED_EVENT } from '@/utils/customEvent'
 import { usePathname } from 'next/navigation'
@@ -14,8 +14,8 @@ export default function Navigation() {
     return navigation.current?.querySelectorAll('span, a')!;
   }
 
-  function hideNavigation(textNodes:NodeListOf<Element>) {
-    textNodes.forEach(node => {
+  function hideNavigation(navigationNodes:NodeListOf<Element>) {
+    navigationNodes.forEach(node => {
       node.classList.add('visually-hidden');
     })
   }
@@ -26,6 +26,7 @@ export default function Navigation() {
 
   function initiateTypewriter() {
     showNavigation();
+
     const textNodes = getNavigationNodes()
 
     hideNavigation(textNodes);

@@ -83,7 +83,7 @@ const HeroSectionAnimatedElements: React.FC = () => {
     }) 
   }
 
-  function logoClickHandler() {
+  function handleLogoClick() {
     const logo = document.getElementById("logo")!;
 
     moveMockCursor(logo);
@@ -94,9 +94,9 @@ const HeroSectionAnimatedElements: React.FC = () => {
   useEffect(()=>{
     const logo = document.getElementById("logo")!;
 
-    logo.addEventListener('click', logoClickHandler);
+    logo.addEventListener('click', handleLogoClick);
 
-    logoClickHandler();
+    handleLogoClick();
   }, [])
 
   return (
