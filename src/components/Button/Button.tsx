@@ -1,7 +1,7 @@
 'use client'
 
 import React, { ReactNode } from 'react'
-import './button.scss'
+import styles from './button.module.scss'
 
 type ButtonTypes = 'primary' | 'primary-green' | 'transparent-green' | 'secondary'
 
@@ -43,9 +43,12 @@ const Button: React.FC<CommonButtonProps> = ({ children, onClick, className='', 
     as
   }
 
+  const buttonSizeClass = `mg-button--${ size }`;
+  const buttonTypeClass = `mg-button--${ type }`;
+
   return (
-    <that.as className={`mg-button mg-button--${ size } mg-button--${ type } ${className}`} onClick={onClick} onMouseEnter={handleChange} onMouseLeave={handleChange}>
-      <span className="mg-button__overlay"></span>
+    <that.as className={`${styles["mg-button"]} ${styles[buttonSizeClass]} ${styles[buttonTypeClass]} ${className}`} onClick={onClick} onMouseEnter={handleChange} onMouseLeave={handleChange}>
+      <span className={styles["mg-button__overlay"]}></span>
       <div>{children}</div>
     </that.as>
   )
