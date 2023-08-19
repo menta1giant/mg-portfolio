@@ -1,3 +1,16 @@
+
+:root {
+  #light {
+    --transparent-green-button-color: #{$secondary-700};
+    --button-box-shadow: 0px 2px 3px 0px rgba(46, 64, 68, 0.25);
+  }
+  
+  #dark {
+    --transparent-green-button-color: #{$white-200};
+    --button-box-shadow: none;
+  }
+}
+
 .mg-button {
   @include text-button;
 
