@@ -75,28 +75,10 @@
     color: $white-700;
   }
 
-  /* &::after {
-    background-color: #fff;
-    content: "";
-    height: 155px;
-    left: -75px;
-    opacity: .2;
-    position: absolute;
-    top: -50px;
-    transform: rotate(35deg);
-    transition: all 700ms cubic-bezier(0.19, 1, 0.22, 1);
-    width: 50px;
-  } */
-
   &:hover {
     color: var(--primary-button-color);
 
-    /* &::after {
-      left: 120%;
-      transition: all 900ms cubic-bezier(0.19, 1, 0.22, 1);
-    } */
-
-    span {
+    .mg-button__overlay {
       height: 300%;
       width: 300%;
     }
@@ -106,7 +88,7 @@
     letter-spacing: 2px;
   }
 
-  span {
+  &__overlay {
     position: absolute;
     display: block;
     border-radius: 50%;

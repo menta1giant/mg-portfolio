@@ -2,7 +2,9 @@
 
 import './benefit-proposition.scss'
 import { useEffect, useRef, useState } from 'react'
-import { dispatchCustomEvent, PACKAGE_IMPORTED_EVENT, LETTERS_SCRAMBLED_EVENT } from '@/utils/customEvent'
+import { dispatchCustomEvent, PACKAGE_IMPORTED_EVENT } from '@/utils/customEvent'
+
+const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 const BenefitProposition: React.FC = () => {
   const textContainer = useRef<HTMLDivElement>(null);
@@ -19,25 +21,24 @@ const BenefitProposition: React.FC = () => {
     interval && clearInterval(interval);
     
     interval = setInterval(() => {
-      let newScrambledPart = phrase.slice(Math.floor(iteration))
+      let newScrambledPart = phrase.slice(iteration)
         .split("")
         .map((letter, index) => {
           if (phrase[index + Math.floor(iteration)] === ' ') return ' '
-          return phrase[Math.floor(Math.random() * phrase.length)]
+          return ALPHABET[Math.floor(Math.random() * ALPHABET.length)]
         })
         .join("");
     
       setTexts({
         scrambled: newScrambledPart,
-        unscrambled: phrase.slice(0, Math.floor(iteration))
+        unscrambled: phrase.slice(0, iteration)
       });
       
       if (iteration >= textContainer.current!.dataset.value!.length){ 
         interval && clearInterval(interval);
-        dispatchCustomEvent(LETTERS_SCRAMBLED_EVENT);
       }
       
-      iteration += (1/3);
+      iteration += (1/2);
     }, 30);
   }
 
@@ -46,7 +47,10 @@ const BenefitProposition: React.FC = () => {
   }, [])
 
   return (
-    <div className="text-monospace benefit-proposition" ref={textContainer} data-value={phrase}><span className="benefit-proposition--active">{ texts.unscrambled }</span><span>{ texts.scrambled }</span></div>
+    <div className="text-monospace benefit-proposition" ref={textContainer} data-value={phrase}>
+      <span className="benefit-proposition--active">{ texts.unscrambled }</span>
+      <span>{ texts.scrambled }</span>
+    </div>
   )
 }
 

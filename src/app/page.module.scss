@@ -1,9 +1,9 @@
 .hero-section {
   display: flex;
   flex-direction: column;
-  gap: clamp(1rem, 5vw, 10rem);
+  gap: clamp(1rem, 3vh, 10rem);
 
-  padding-top: clamp(1rem, 2vw, 5rem);
+  padding-top: clamp(1rem, 1.3vh, 5rem);
 
   &-main {
     display: grid;
@@ -56,6 +56,8 @@
     @include text-display;
     @include fw-medium;
 
+    --feature-divider: 1px solid #{$primary-700-alpha-10};
+
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
@@ -72,11 +74,11 @@
     };
 
     &:nth-child(n+2) {
-      border-left: 2px solid $primary-700-alpha-10;
+      border-left: var(--feature-divider);
 
       @media screen and (max-width: $mobile-breakpoint) {
         border-left: none;
-        border-top: 2px solid $primary-700-alpha-10;
+        border-top: var(--feature-divider);
       }
     }
 

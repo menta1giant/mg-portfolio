@@ -14,10 +14,11 @@ export default function Header() {
         height={48}
         priority
       />
-      <div><Navigation/></div>
+      <div>
+        <Navigation/>
+      </div>
       <div className={styles.buttons}>
-        <Button type="primary-green" className="mobile">{`>`}</Button>
-        <Button type="primary-green" className="desktop">GET IN TOUCH</Button>
+        <Button type="primary-green"><span className="desktop">GET IN TOUCH</span><span className="mobile">{'==>'}</span></Button>
         <Button type="transparent-green">TH</Button>
         <Button type="transparent-green" className="desktop">ENG</Button>
       </div>

@@ -45,7 +45,7 @@ const Button: React.FC<CommonButtonProps> = ({ children, onClick, className='', 
 
   return (
     <that.as className={`mg-button mg-button--${ size } mg-button--${ type } ${className}`} onClick={onClick} onMouseEnter={handleChange} onMouseLeave={handleChange}>
-      <span></span>
+      <span className="mg-button__overlay"></span>
       <div>{children}</div>
     </that.as>
   )

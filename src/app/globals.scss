@@ -4,50 +4,17 @@
   --font-mono: #{$ff-mono};
 
   #light {
-    --max-width: 1100px;
-    --border-radius: 12px;
-
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
     --background-color: #{$white-100};
 
     --font-color: #{$white-700};
     --heading-color: #{$white-600};
-
-    --tile-start-rgb: 239, 245, 249;
-    --tile-end-rgb: 228, 232, 233;
-    --tile-border: conic-gradient(
-      #00000080,
-      #00000040,
-      #00000030,
-      #00000020,
-      #00000010,
-      #00000010,
-      #00000080
-    );
   }
 
   #dark {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
     --background-color: #{$white-800};
 
     --font-color: #{$white-400};
     --heading-color: #{$primary-300};
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
   }
 }
 

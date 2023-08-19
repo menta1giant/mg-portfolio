@@ -60,10 +60,6 @@
   visibility: hidden;
 }
 
-.fade-up-later {
-  @extend .visually-hidden;
-}
-
 .fade-up {
   animation: fadeUp .6s;
 }

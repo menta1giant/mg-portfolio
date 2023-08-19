@@ -4,28 +4,29 @@ import Image from 'next/image'
 import { gsap } from "gsap"
 import { useEffect, useRef } from 'react'
 import './animated-elements.scss'
-import { dispatchCustomEvent, LOGO_CLICKED_EVENT, PACKAGE_IMPORTED_EVENT, TYPEWRITER_FINISHED_EVENT, LETTERS_SCRAMBLED_EVENT } from '@/utils/customEvent'
+import { dispatchCustomEvent, LOGO_CLICKED_EVENT, PACKAGE_IMPORTED_EVENT, TYPEWRITER_FINISHED_EVENT } from '@/utils/customEvent'
 
 const HeroSectionAnimatedElements: React.FC = () => {
-  const mockCursor = useRef<HTMLImageElement>(null);
-  const mockEnter = useRef<HTMLDivElement>(null);
-  const mockCursorPulse = useRef<HTMLDivElement>(null);
+  const mockCursor = useRef<HTMLImageElement>(null)
+  const mockEnter = useRef<HTMLDivElement>(null)
+  const mockCursorPulse = useRef<HTMLDivElement>(null)
 
-  function moveMockCursor(elem1:HTMLElement, elem2:HTMLElement) {
+  function moveMockCursor(targetElement:HTMLElement) {
     gsap.to('.cursor', {
       left: 0,
       top: 0,
       duration: 0
     }) 
-    mockCursor.current?.classList.remove('visually-hidden');
 
-    const elem1Rect = elem1.getBoundingClientRect();
-    const elem2Rect = elem2.getBoundingClientRect();
+    const cursor = mockCursor.current!
+    const cursorPulse = mockCursorPulse.current!
+
+    cursor.classList.remove('visually-hidden');
+
+    const elem2Rect = targetElement.getBoundingClientRect()
   
-    const translateX = elem2Rect.left + elem2.clientWidth / 2;
-    const translateY = elem2Rect.top + elem2.clientHeight / 2;
-
-    console.dir(mockCursor);
+    const translateX = elem2Rect.left + targetElement.clientWidth / 2
+    const translateY = elem2Rect.top + targetElement.clientHeight / 2
   
     gsap.to('.cursor', {
       left: translateX,
@@ -33,27 +34,30 @@ const HeroSectionAnimatedElements: React.FC = () => {
       duration: 0.5,
       ease: "power2.out",
       onComplete: () => {
-        mockCursorPulse.current?.classList.add('expand');
+        cursorPulse.classList.add('expand')
 
-        const isDesktop = window.matchMedia("(min-width: 0px)").matches;
+        const isDesktop = window.matchMedia("(min-width: 0px)").matches
 
-        isDesktop ? dispatchCustomEvent(LOGO_CLICKED_EVENT) : dispatchCustomEvent(PACKAGE_IMPORTED_EVENT);
+        isDesktop ? dispatchCustomEvent(LOGO_CLICKED_EVENT) : dispatchCustomEvent(PACKAGE_IMPORTED_EVENT)
 
         setTimeout(() => {
-          mockCursorPulse.current?.classList.remove('expand');
-          mockCursor.current?.classList.add('visually-hidden');
+          cursorPulse.classList.remove('expand')
+          cursor.classList.add('visually-hidden')
         }, 700)
       }
     });
   };
 
   function clickMockEnter() {
-    const packageName = document.getElementById('package-name')!;
-    const mockEnterElem = mockEnter.current!;
-    const packageNameRect = packageName.getBoundingClientRect();
+    const CURSOR_PULSE_OFFSET = 12
+
+    const packageName = document.getElementById('package-name')!
+    const mockEnterElem = mockEnter.current!
+    const cursorPulse = mockCursorPulse.current!
+    const packageNameRect = packageName.getBoundingClientRect()
   
-    const translateX = packageNameRect.right + 12;
-    const translateY = packageNameRect.top + 12;
+    const translateX = packageNameRect.right + CURSOR_PULSE_OFFSET
+    const translateY = packageNameRect.top + CURSOR_PULSE_OFFSET
 
     gsap.to('.cursor', {
       left: translateX,
@@ -65,11 +69,12 @@ const HeroSectionAnimatedElements: React.FC = () => {
 
         setTimeout(() => {
           mockEnterElem.classList.add('mock-enter--active');
-          mockCursorPulse.current?.classList.add('expand', 'expand-enter');
+          cursorPulse.classList.add('expand', 'expand-enter');
 
           dispatchCustomEvent(PACKAGE_IMPORTED_EVENT);
+
           setTimeout(() => {
-            mockCursorPulse.current?.classList.remove('expand', 'expand-enter');
+            cursorPulse.classList.remove('expand', 'expand-enter');
             mockEnterElem.classList.remove('mock-enter--active');
             mockEnterElem.classList.add('visually-hidden');
           }, 900)
@@ -78,19 +83,10 @@ const HeroSectionAnimatedElements: React.FC = () => {
     }) 
   }
 
-  function fadeUpHeroSection() {
-    const nodes = document.querySelectorAll('.fade-up-later');
-
-    nodes.forEach(node => {
-      node.classList.remove('fade-up-later');
-      node.classList.add('fade-up');
-    })
-  }
-
   function logoClickHandler() {
     const logo = document.getElementById("logo")!;
 
-    moveMockCursor(mockCursor.current!, logo);
+    moveMockCursor(logo);
 
     document.addEventListener(TYPEWRITER_FINISHED_EVENT, clickMockEnter);
   }
@@ -100,19 +96,15 @@ const HeroSectionAnimatedElements: React.FC = () => {
 
     logo.addEventListener('click', logoClickHandler);
 
-    document.addEventListener(LETTERS_SCRAMBLED_EVENT, fadeUpHeroSection);
-
     logoClickHandler();
   }, [])
 
   return (
     <>
-      
       <div className="mock-enter cursor visually-hidden" ref={mockEnter}>Enter</div>
       <div className="mock-cursor-pulse cursor visually-hidden" ref={mockCursorPulse}></div>
       <Image
-        id="mock-cursor"
-        className="cursor fade-in"
+        className="mock-cursor cursor fade-in"
         ref={mockCursor}
         src="/cursor.svg"
         alt="Cursor"
