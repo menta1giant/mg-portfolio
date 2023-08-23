@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { gsap } from "gsap"
-import { useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import './animated-elements.scss'
 import { dispatchCustomEvent, LOGO_CLICKED_EVENT, PACKAGE_IMPORTED_EVENT, TYPEWRITER_FINISHED_EVENT } from '@/utils/customEvent'
 
@@ -83,13 +83,13 @@ const HeroSectionAnimatedElements: React.FC = () => {
     }) 
   }
 
-  function handleLogoClick() {
+  const handleLogoClick = useCallback(() => {
     const logo = document.getElementById("logo")!;
 
     moveMockCursor(logo);
 
     document.addEventListener(TYPEWRITER_FINISHED_EVENT, clickMockEnter);
-  }
+  }, [])
 
   useEffect(()=>{
     const logo = document.getElementById("logo")!;
@@ -97,7 +97,9 @@ const HeroSectionAnimatedElements: React.FC = () => {
     logo.addEventListener('click', handleLogoClick);
 
     handleLogoClick();
-  }, [])
+
+    return () => logo.removeEventListener('click', handleLogoClick);
+  }, [handleLogoClick])
 
   return (
     <>

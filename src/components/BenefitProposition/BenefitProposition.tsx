@@ -48,7 +48,7 @@ const BenefitProposition: React.FC = () => {
 
   return (
     <div className="text-monospace benefit-proposition" ref={textContainer} data-value={phrase}>
-      <span className="benefit-proposition--active">{ texts.unscrambled }</span>
+      <h1 className="benefit-proposition--active">{ texts.unscrambled }</h1>
       <span>{ texts.scrambled }</span>
     </div>
   )

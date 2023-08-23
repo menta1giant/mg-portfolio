@@ -4,14 +4,14 @@
 }
 
 .mock-cursor {
-  position: fixed;
+  position: absolute;
 
   left: var(--left-coordinate);
   top: var(--top-coordinate);
 }
 
 .mock-cursor-pulse {
-  position: fixed;
+  position: absolute;
 
   left: var(--left-coordinate);
   top: var(--top-coordinate);
@@ -91,7 +91,7 @@
   @include text-extra-small;
   @include fw-semi-bold;
 
-  position: fixed;
+  position: absolute;
 
   background: white;
   padding: .5rem 1rem;

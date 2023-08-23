@@ -1,21 +1,10 @@
 'use client'
 
-import React, { ReactNode } from 'react'
+import React from 'react'
 import './button.scss'
+import { ButtonProps } from '@/interfaces/button';
 
-type ButtonTypes = 'primary' | 'primary-green' | 'transparent-green' | 'secondary'
-
-export type ButtonSizes = 'medium' | 'large'
-
-export type AsElement = 'button' | 'a'
-
-export interface ButtonProps {
-  children: ReactNode;
-  className?: string,
-  size?: ButtonSizes;
-  as?: AsElement;
-  onClick?: () => void;
-}
+type ButtonTypes = 'primary' | 'primary-green' | 'transparent-green' | 'transparent' | 'secondary'
 
 interface CommonButtonProps extends ButtonProps {
   type?: ButtonTypes;

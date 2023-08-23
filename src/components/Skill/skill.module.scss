@@ -1,0 +1,49 @@
+.skill {
+  @include fw-medium;
+  @include text-large;
+
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  margin-block: .5rem;
+
+  &--active {
+    background: $secondary-500-alpha-15;
+
+    .skill__title {
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    width: max-content;
+    padding: .5rem .75rem;
+    border-radius: $border-radius;
+
+    transition-duration: .3s;
+
+    cursor: pointer;
+
+    &:hover {
+      background: $primary-500-alpha-15;
+    }
+  }
+
+  &__body {
+    padding: .75rem;
+
+    p, span, li {
+      @include text-medium;
+    }
+
+    ul {
+      padding-top: .75rem;
+    }
+  }
+}

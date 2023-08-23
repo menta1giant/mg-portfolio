@@ -2,6 +2,7 @@
 
 :root {
   --font-mono: #{$ff-mono};
+  --card-shadow: 0px 2px 4px 2px rgba(46, 43, 78, 0.10);
 
   #light {
     --background-color: #{$white-100};
@@ -22,6 +23,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  transition-duration: .15s;
 }
 
 html {
@@ -50,6 +52,9 @@ a {
 p {
   @include text-large;
   @include fw-light;
+
+  margin-bottom: .5rem;
+  max-width: 65ch;
 }
 
 html:has(#dark) {
@@ -57,9 +62,19 @@ html:has(#dark) {
 }
 
 header, main, footer {
-  position: relative;
-
   max-width: $desktop-breakpoint;
   padding: 0 $container-horizontal-padding-desktop;
   margin: auto;
+}
+
+section {
+  padding-block: 2rem;
+
+  & + section {
+    margin-top: 4rem;
+  }
+}
+
+a, button {
+  cursor: pointer;
 }
