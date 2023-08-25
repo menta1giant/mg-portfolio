@@ -9,7 +9,8 @@ import BenefitProposition from '@/components/BenefitProposition/BenefitPropositi
 import AnimatedElements from '@/components/AnimatedElements/AnimatedElements'
 import { LOGO_SIZE, LOGO_SIZE_SMALL } from '@/utils/image'
 import TransparentButton from '@/components/TransparentButton/TransparentButton'
-import InputField from '@/components/InputField/InputField'
+import FormField from '@/components/FormField/FormField'
+import CopyEmail from '@/components/CopyEmail/CopyEmail'
 
 interface FeatureProps {
   children: ReactNode;
@@ -54,7 +55,7 @@ const HeroSection: React.FC = () => {
               priority
             />
           </div>
-          <div className={`flex-column-content ${styles['hero-section__right']}`}>
+          <div className={`flex-column flex-gap-large ${styles['hero-section__right']}`}>
             <SectionHeader title="Mikhail Gostev" description="Fullstack Web Developer" />
             <p>
               Я талантливый разработчик из Москвы. Умею создавать красивые и доступные сайты. За моими плечами более 4-х лет кодинга и несколько проектов.
@@ -132,9 +133,9 @@ const PreviousJob: React.FC = () => {
 const JobExperienceSection: React.FC = () => {
   return (
     <section className={`grid-50-50 ${styles['job-experience-section']}`}>
-      <div className="flex-column-content">
+      <div className="flex-column flex-gap-large">
       <SectionHeader title="Job experience" description="I worked on real projects" />
-        <div className="flex-column-content">
+        <div className="flex-column flex-gap-large">
           <PreviousJob/>
           <div>
             <p>
@@ -167,11 +168,11 @@ const JobExperienceSection: React.FC = () => {
 const FeaturedProjectSection: React.FC = () => {
   return (
     <section className={styles['featured-project-section']}>
-      <div className="flex-column-content">
+      <div className="flex-column flex-gap-large">
         <SectionHeader title="Featured project" description="Check out my latest work" />
-        <div className="flex-column-content">
+        <div className="flex-column flex-gap-large">
           <div className={`grid-50-50 ${styles['featured-project-card']}`}>
-            <div className="flex-column-content">
+            <div className="flex-column flex-gap-large">
               <div className={styles['featured-project-card__row']}>
                 <span className="text-h2 fw-semi-bold">Nerif</span>
                 <span>May 2023 - July 2023</span>
@@ -240,7 +241,7 @@ const FeaturedProjectSection: React.FC = () => {
 const SkillsSection: React.FC = () => {
   return (
     <section className={styles['skills-section']}>
-      <div className="flex-column-content">
+      <div className="flex-column flex-gap-large">
         <SectionHeader title="Hard skills" description=" know a lot of stuff" />
         <div className="grid-50-50">
           { SKILLS_CATEGORIES.map(category => (
@@ -257,7 +258,7 @@ const SkillsSection: React.FC = () => {
 const SoftSkillsSection: React.FC = () => {
   return (
     <section className="grid-50-50">
-      <div className='flex-column-content'>
+      <div className='flex-column flex-gap-large'>
         <SectionHeader title='Soft skills' description='Chill out' />
         <div>
           <p>I used to tutor English and Computer science, and still haven’t lost passion for <strong className='highlight'>teaching.</strong> I love sharing my knowledge with people and I’m quite proficient at it too</p>
@@ -279,19 +280,30 @@ const SoftSkillsSection: React.FC = () => {
 
 const ContactSection: React.FC = () => {
   return (
-    <section className="grid-50-50">
-      <div className='flex-column-content'>
-        <SectionHeader title='Contact' description='Get in touch' />
-        <p>I'm always happy to hear about exciting opportunities, and build valuable connections. Let's connect! You can send an e-mail or fill out the form. I’ll add the fourth line for the sake of layout.</p>
-        <div>
-          <h3 className='text-large fw-medium text-white-600'>Contact me via e-mail</h3>
+    <section className='flex-column flex-gap-large'>
+      <SectionHeader title='Contact' description='Get in touch' />
+      <div className="grid-50-50">
+        <div className='flex-column flex-gap-large'>
+          <p>I'm always happy to hear about exciting opportunities, and build valuable connections. Let's connect! You can send an e-mail or fill out the form. I’ll add the fourth line for the sake of layout.</p>
+          <div className="flex-column flex-gap-medium">
+            <h3 className='text-large fw-medium text-white-600'>Contact me via e-mail</h3>
+            <CopyEmail email='mikhail-gostev.dev.gmail.com' />
+          </div>
+          <div className="flex-column flex-gap-medium">
+            <h3 className='text-large fw-medium text-white-600'>Check out my socials</h3>
+            <div className='flex-gap-medium text-large text-white-600'>
+              <i className="fa-brands fa-telegram"></i>
+              <i className="fa-brands fa-linkedin"></i>
+              <i className="fa-brands fa-github"></i>
+            </div>
+          </div>
         </div>
-        <div>
-          <h3 className='text-large fw-medium text-white-600'>Check out my socials</h3>
+        <div className="flex-column flex-gap-extra-large">
+          <FormField label='Имя' />
+          <FormField label='Email' />
+          <FormField type='textarea' label='Сообщение' />
+          <Button type="primary" size="medium" className='fluid'>Отправить</Button>
         </div>
-      </div>
-      <div>
-        <InputField label='Имя' />
       </div>
     </section>
   )
@@ -300,7 +312,6 @@ const ContactSection: React.FC = () => {
 const Home: React.FC = () => {
   return (
     <>
-      <AnimatedElements/>
       <HeroSection/>
       <JobExperienceSection/>
       <FeaturedProjectSection/>

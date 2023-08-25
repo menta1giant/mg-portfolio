@@ -38,6 +38,10 @@
   color: $white-600;
 }
 
+.text-white-500 {
+  color: $white-500;
+}
+
 .fw-medium {
   @include fw-medium;
 }
@@ -113,12 +117,37 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+
+  @media screen and (max-width: $tablet-breakpoint) {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
 }
 
-.flex-column-content {
+.flex-column {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.flex-gap-extra-large {
+  display: flex;
+  gap: 2rem;
+}
+
+.flex-gap-large {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.flex-gap-medium {
+  display: flex;
+  gap: 1rem;
+}
+
+.flex-gap-small {
+  display: flex;
+  gap: .5rem;
 }
 
 .li {
@@ -149,4 +178,8 @@ strong.highlight {
   padding: 0 .5rem;
 
   background: $secondary-500-alpha-15;
+}
+
+.fluid {
+  width: 100%;
 }

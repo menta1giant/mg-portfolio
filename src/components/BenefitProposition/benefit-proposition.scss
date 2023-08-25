@@ -21,7 +21,8 @@
     animation: backgroundMove 20s ease-in-out infinite alternate;
   }
 
-  span {
+  span, h1 {
+    display: inline;
     white-space: pre-wrap;
   }
 }

@@ -1,10 +1,16 @@
 'use client'
 
-import styles from './input.module.scss'
+import styles from '@/styles/text-input.module.scss'
 
-const Input: React.FC = () => {
+type TInputTypes = 'text' | 'email'
+interface IInputProps {
+  type?: TInputTypes
+}
+
+
+const Input: React.FC<IInputProps> = ({type='text'}) => {
   return (
-    <input className={styles['mg-input']} type="text" placeholder="abc" />
+    <input className={styles['mg-text-input']} type={type} />
   )
 }
 

@@ -5,6 +5,7 @@
 
 .mock-cursor {
   position: absolute;
+  z-index: 11;
 
   left: var(--left-coordinate);
   top: var(--top-coordinate);
@@ -12,6 +13,7 @@
 
 .mock-cursor-pulse {
   position: absolute;
+  z-index: 10;
 
   left: var(--left-coordinate);
   top: var(--top-coordinate);
@@ -92,6 +94,7 @@
   @include fw-semi-bold;
 
   position: absolute;
+  z-index: 11;
 
   background: white;
   padding: .5rem 1rem;

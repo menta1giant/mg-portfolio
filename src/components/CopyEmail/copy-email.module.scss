@@ -1,0 +1,15 @@
+.copy-email {
+  @include fw-regular;
+  @include text-medium;
+
+  width: max-content;
+  padding: 1rem;
+  background: $white-300;
+  color: $white-500;
+  border: 1px solid $white-400;
+  border-radius: $border-radius-small;
+
+  i {
+    margin-left: 1.5rem;
+  }
+}

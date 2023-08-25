@@ -64,6 +64,10 @@ $lh-body: 1.6;
   font-weight: $fw-light;
 }
 
+@mixin fw-regular {
+  font-weight: $fw-regular;
+}
+
 @mixin fw-medium {
   font-weight: $fw-medium;
 }

@@ -1,0 +1,30 @@
+.mg-form-field {
+  position: relative;
+  
+  label {
+    @include text-large;
+    @include text-medium;
+
+    span {
+      position: absolute;
+      left: 1rem;
+      translate: 0 -50%;
+
+      padding: .25rem;
+      background: var(--background-color);
+      color: $primary-700;
+    }
+  }
+
+  @supports (selector(:has(*))) {
+    label span {
+      color: $white-500;
+    }
+
+    &:has(:focus) {
+      label span {
+        color: $primary-700;
+      }
+    }
+  }
+}

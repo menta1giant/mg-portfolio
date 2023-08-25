@@ -1,12 +1,11 @@
-.mg-input {
+.mg-text-input {
   @include fw-light;
 
   padding: 1.75rem 1.25rem;
-
-
-  border-radius: 3px;
-
+  border-radius: $border-radius-small;
   box-shadow: 0 0 0 1px $white-400;
+
+  width: 100%;
 
   &:focus {
     box-shadow: 0 0 0 2px $primary-500-alpha-60;
