@@ -1,6 +1,6 @@
 .mg-form-field {
   position: relative;
-  
+
   label {
     @include text-large;
     @include text-medium;
@@ -10,7 +10,7 @@
       left: 1rem;
       translate: 0 -50%;
 
-      padding: .25rem;
+      padding: 0.25rem;
       background: var(--background-color);
       color: $primary-700;
     }

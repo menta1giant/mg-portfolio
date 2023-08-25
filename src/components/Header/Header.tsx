@@ -16,11 +16,18 @@ export default function Header() {
         height={48}
         priority
       />
-      <Navigation/>
+      <Navigation />
       <div className={styles.buttons}>
-        <Button type="primary-green"><span className="desktop">GET IN TOUCH</span><span className="mobile">{'==>'}</span></Button>
-        <Button type="transparent-green"><i className="fa-solid fa-sun"></i></Button>
-        <Button type="transparent-green" className="desktop"><i className="fa-solid fa-globe"></i></Button>
+        <Button type="primary-green">
+          <span className="desktop">GET IN TOUCH</span>
+          <span className="mobile">{'==>'}</span>
+        </Button>
+        <Button type="transparent-green">
+          <i className="fa-solid fa-sun"></i>
+        </Button>
+        <Button type="transparent-green" className="desktop">
+          <i className="fa-solid fa-globe"></i>
+        </Button>
       </div>
     </header>
   )

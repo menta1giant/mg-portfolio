@@ -4,10 +4,12 @@ interface ICopyEmailProps {
   email: string
 }
 
-
-const CopyEmail: React.FC<ICopyEmailProps> = ({email}) => {
+const CopyEmail: React.FC<ICopyEmailProps> = ({ email }) => {
   return (
-    <div className={styles['copy-email']}>{email}<i className="fa-regular fa-copy text-large"></i></div>
+    <div className={styles['copy-email']}>
+      {email}
+      <i className="fa-regular fa-copy text-large"></i>
+    </div>
   )
 }
 

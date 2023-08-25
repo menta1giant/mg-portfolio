@@ -11,12 +11,12 @@ export default function Navigation() {
   const pathname = usePathname()
 
   function getNavigationNodes() {
-    return navigation.current?.querySelectorAll('span, a')!;
+    return navigation.current?.querySelectorAll('span, a')!
   }
 
-  function hideNavigation(navigationNodes:NodeListOf<Element>) {
-    navigationNodes.forEach(node => {
-      node.classList.add('visually-hidden');
+  function hideNavigation(navigationNodes: NodeListOf<Element>) {
+    navigationNodes.forEach((node) => {
+      node.classList.add('visually-hidden')
     })
   }
 
@@ -25,27 +25,33 @@ export default function Navigation() {
   }
 
   const initiateTypewriter = useCallback(() => {
-    showNavigation();
+    showNavigation()
 
     const textNodes = getNavigationNodes()
 
-    hideNavigation(textNodes);
+    hideNavigation(textNodes)
 
-    const speeds = [...(new Array(6).fill(23)), 12]
+    const speeds = [...new Array(6).fill(23), 12]
 
     processTextNodesSequentially(textNodes, speeds)
   }, [])
 
   useEffect(() => {
-    document.addEventListener(LOGO_CLICKED_EVENT, initiateTypewriter);
+    document.addEventListener(LOGO_CLICKED_EVENT, initiateTypewriter)
 
-    return () => document.removeEventListener(LOGO_CLICKED_EVENT, initiateTypewriter)
+    return () =>
+      document.removeEventListener(LOGO_CLICKED_EVENT, initiateTypewriter)
   }, [initiateTypewriter])
 
   return (
-    <div className={`${pathname === '/' ? 'visually-hidden' : ''} ${styles.navigation}`} ref={navigation}>
+    <div
+      className={`${pathname === '/' ? 'visually-hidden' : ''} ${
+        styles.navigation
+      }`}
+      ref={navigation}
+    >
       <span>import </span>
-      <span className="text-large text-heading">{ `{ ` }</span>
+      <span className="text-large text-heading">{`{ `}</span>
       <nav className="text-large text-heading">
         <ul>
           <li>
@@ -59,10 +65,12 @@ export default function Navigation() {
           </li>
         </ul>
       </nav>
-      <span className="text-large text-heading">{ `} `}</span>
+      <span className="text-large text-heading">{`} `}</span>
       <div className="nowrap inline-flex">
         <span>from </span>
-        <span id="package-name" className="text-heading text-large">&quot;MikhailGostev&quot;</span>
+        <span id="package-name" className="text-heading text-large">
+          &quot;MikhailGostev&quot;
+        </span>
       </div>
     </div>
   )

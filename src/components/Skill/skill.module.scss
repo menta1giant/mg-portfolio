@@ -5,7 +5,7 @@
   border-radius: $border-radius;
   overflow: hidden;
 
-  margin-block: .5rem;
+  margin-block: 0.5rem;
 
   &--active {
     background: $secondary-500-alpha-15;
@@ -20,13 +20,13 @@
   &__title {
     display: flex;
     align-items: center;
-    gap: .5rem;
+    gap: 0.5rem;
 
     width: max-content;
-    padding: .5rem .75rem;
+    padding: 0.5rem 0.75rem;
     border-radius: $border-radius;
 
-    transition-duration: .3s;
+    transition-duration: 0.3s;
 
     cursor: pointer;
 
@@ -36,14 +36,16 @@
   }
 
   &__body {
-    padding: .75rem;
+    padding: 0.75rem;
 
-    p, span, li {
+    p,
+    span,
+    li {
       @include text-medium;
     }
 
     ul {
-      padding-top: .75rem;
+      padding-top: 0.75rem;
     }
   }
 }

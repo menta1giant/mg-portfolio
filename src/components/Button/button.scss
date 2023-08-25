@@ -1,10 +1,9 @@
-
 :root {
   #light {
     --transparent-green-button-color: #{$secondary-700};
     --button-box-shadow: 0px 2px 3px 0px rgba(46, 64, 68, 0.25);
   }
-  
+
   #dark {
     --transparent-green-button-color: #{$white-200};
     --button-box-shadow: none;
@@ -21,8 +20,9 @@
   position: relative;
   box-shadow: var(--button-box-shadow);
 
-  transition-property: background-color, color, box-shadow, transform, filter, letter-spacing;
-  transition-duration: .2s;
+  transition-property: background-color, color, box-shadow, transform, filter,
+    letter-spacing;
+  transition-duration: 0.2s;
 
   cursor: pointer;
 
@@ -71,7 +71,9 @@
     background: transparent;
     color: $primary-700;
 
-    &:focus, &:hover, &:active {
+    &:focus,
+    &:hover,
+    &:active {
       box-shadow: none;
       text-transform: unset;
     }
@@ -106,14 +108,16 @@
     position: absolute;
     display: block;
     border-radius: 50%;
-    transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+    transition:
+      width 0.4s ease-in-out,
+      height 0.4s ease-in-out;
     transform: translate(-50%, -50%);
     background-color: $primary-700;
     height: 0%;
     width: 0%;
   }
 
-  &>div {
+  & > div {
     position: relative;
     z-index: 2;
 

@@ -13,29 +13,34 @@ import FormField from '@/components/FormField/FormField'
 import CopyEmail from '@/components/CopyEmail/CopyEmail'
 
 interface FeatureProps {
-  children: ReactNode;
+  children: ReactNode
   title: string
 }
 
-const Feature: React.FC<FeatureProps> = ({title, children}) => {
+const Feature: React.FC<FeatureProps> = ({ title, children }) => {
   return (
     <article className={styles['hero-section-feature']}>
-      <span className={styles['hero-section-feature__title']}>{ title }</span>
-      <span className={styles['hero-section-feature__description']}>{ children }</span>
+      <span className={styles['hero-section-feature__title']}>{title}</span>
+      <span className={styles['hero-section-feature__description']}>
+        {children}
+      </span>
     </article>
   )
 }
 
 interface SectionHeaderProps {
-  title: string; 
+  title: string
   description: string
 }
 
-const SectionHeader: React.FC<SectionHeaderProps> = ({title, description}) => {
+const SectionHeader: React.FC<SectionHeaderProps> = ({
+  title,
+  description,
+}) => {
   return (
     <div>
-      <h2 className="section-heading">{ title }</h2>
-      <span className="tag">{ description }</span>
+      <h2 className="section-heading">{title}</h2>
+      <span className="tag">{description}</span>
     </div>
   )
 }
@@ -44,7 +49,7 @@ const HeroSection: React.FC = () => {
   return (
     <>
       <section className={styles['hero-section']}>
-        <BenefitProposition/>
+        <BenefitProposition />
         <div className="fade-up grid-50-50">
           <div className={styles['hero-section__left']}>
             <Image
@@ -55,19 +60,32 @@ const HeroSection: React.FC = () => {
               priority
             />
           </div>
-          <div className={`flex-column flex-gap-large ${styles['hero-section__right']}`}>
-            <SectionHeader title="Mikhail Gostev" description="Fullstack Web Developer" />
+          <div
+            className={`flex-column flex-gap-large ${styles['hero-section__right']}`}
+          >
+            <SectionHeader
+              title="Mikhail Gostev"
+              description="Fullstack Web Developer"
+            />
             <p>
-              Я талантливый разработчик из Москвы. Умею создавать красивые и доступные сайты. За моими плечами более 4-х лет кодинга и несколько проектов.
+              Я талантливый разработчик из Москвы. Умею создавать красивые и
+              доступные сайты. За моими плечами более 4-х лет кодинга и
+              несколько проектов.
             </p>
             <div className={styles['cta-container']}>
-              <Button type="primary" size="large">View projects</Button>
-              <Button as="a" type="secondary" size="large">Hire me</Button>
+              <Button type="primary" size="large">
+                View projects
+              </Button>
+              <Button as="a" type="secondary" size="large">
+                Hire me
+              </Button>
             </div>
           </div>
         </div>
         <div className={`fade-up ${styles['hero-section-features']}`}>
-          <Feature title="3+ years of coding">Including full-time employment</Feature>
+          <Feature title="3+ years of coding">
+            Including full-time employment
+          </Feature>
           <Feature title="Working with">
             <ul>
               <li>
@@ -102,7 +120,9 @@ const HeroSection: React.FC = () => {
               </li>
             </ul>
           </Feature>
-          <Feature title="Versatile skillset">Following the latest trends</Feature>
+          <Feature title="Versatile skillset">
+            Following the latest trends
+          </Feature>
         </div>
       </section>
     </>
@@ -123,8 +143,12 @@ const PreviousJob: React.FC = () => {
         />
       </div>
       <div>
-        <span className={styles['previous-job__position']}>Frontend Developer</span>
-        <span className={styles['previous-job__period']}>February 2022 - May 2023</span>
+        <span className={styles['previous-job__position']}>
+          Frontend Developer
+        </span>
+        <span className={styles['previous-job__period']}>
+          February 2022 - May 2023
+        </span>
       </div>
     </div>
   )
@@ -134,15 +158,17 @@ const JobExperienceSection: React.FC = () => {
   return (
     <section className={`grid-50-50 ${styles['job-experience-section']}`}>
       <div className="flex-column flex-gap-large">
-      <SectionHeader title="Job experience" description="I worked on real projects" />
+        <SectionHeader
+          title="Job experience"
+          description="I worked on real projects"
+        />
         <div className="flex-column flex-gap-large">
-          <PreviousJob/>
+          <PreviousJob />
           <div>
+            <p>Компания Roistat специализируется на бизнес-аналитике.</p>
             <p>
-              Компания Roistat специализируется на бизнес-аналитике.
-            </p>
-            <p>
-              В течение 16 месяцев работы в компании, я выполнял следующие задачи:
+              В течение 16 месяцев работы в компании, я выполнял следующие
+              задачи:
             </p>
           </div>
           <ul>
@@ -169,7 +195,10 @@ const FeaturedProjectSection: React.FC = () => {
   return (
     <section className={styles['featured-project-section']}>
       <div className="flex-column flex-gap-large">
-        <SectionHeader title="Featured project" description="Check out my latest work" />
+        <SectionHeader
+          title="Featured project"
+          description="Check out my latest work"
+        />
         <div className="flex-column flex-gap-large">
           <div className={`grid-50-50 ${styles['featured-project-card']}`}>
             <div className="flex-column flex-gap-large">
@@ -210,15 +239,24 @@ const FeaturedProjectSection: React.FC = () => {
               </div>
               <div>
                 <p>
-                  Nerif is an extension of my passion project that was born in late 2020. When I imagined data science as an important part of my future, I started working on an algorithm that would be able to predict the results of CS:GO matches.
+                  Nerif is an extension of my passion project that was born in
+                  late 2020. When I imagined data science as an important part
+                  of my future, I started working on an algorithm that would be
+                  able to predict the results of CS:GO matches.
                 </p>
                 <p>
-                  It has proven to be unsuccessful, so I set a thought experiment: What would happen if it worked and the premise was actually marketable? That’s how Nerif was born.
+                  It has proven to be unsuccessful, so I set a thought
+                  experiment: What would happen if it worked and the premise was
+                  actually marketable? That’s how Nerif was born.
                 </p>
               </div>
               <div className={styles['cta-container']}>
-                <Button type="primary" size="medium">Посетить сайт</Button>
-                <Button as="a" type="secondary" size="medium">Читать далее</Button>
+                <Button type="primary" size="medium">
+                  Посетить сайт
+                </Button>
+                <Button as="a" type="secondary" size="medium">
+                  Читать далее
+                </Button>
               </div>
             </div>
             <div>
@@ -232,8 +270,7 @@ const FeaturedProjectSection: React.FC = () => {
           </div>
         </div>
       </div>
-      <div>
-      </div>
+      <div></div>
     </section>
   )
 }
@@ -244,13 +281,12 @@ const SkillsSection: React.FC = () => {
       <div className="flex-column flex-gap-large">
         <SectionHeader title="Hard skills" description=" know a lot of stuff" />
         <div className="grid-50-50">
-          { SKILLS_CATEGORIES.map(category => (
+          {SKILLS_CATEGORIES.map((category) => (
             <SkillsCategory {...category} />
           ))}
         </div>
       </div>
-      <div>
-      </div>
+      <div></div>
     </section>
   )
 }
@@ -258,11 +294,22 @@ const SkillsSection: React.FC = () => {
 const SoftSkillsSection: React.FC = () => {
   return (
     <section className="grid-50-50">
-      <div className='flex-column flex-gap-large'>
-        <SectionHeader title='Soft skills' description='Chill out' />
+      <div className="flex-column flex-gap-large">
+        <SectionHeader title="Soft skills" description="Chill out" />
         <div>
-          <p>I used to tutor English and Computer science, and still haven’t lost passion for <strong className='highlight'>teaching.</strong> I love sharing my knowledge with people and I’m quite proficient at it too</p>
-          <p>I enjoy playing board games, whether it be with close friends or random people in an anticafe. Actually, I regularly host board game events there, which requires me to be <strong className='highlight'>responsible,</strong> good at <strong className='highlight'>leadership,</strong> and get along well with different people.</p>
+          <p>
+            I used to tutor English and Computer science, and still haven’t lost
+            passion for <strong className="highlight">teaching.</strong> I love
+            sharing my knowledge with people and I’m quite proficient at it too
+          </p>
+          <p>
+            I enjoy playing board games, whether it be with close friends or
+            random people in an anticafe. Actually, I regularly host board game
+            events there, which requires me to be{' '}
+            <strong className="highlight">responsible,</strong> good at{' '}
+            <strong className="highlight">leadership,</strong> and get along
+            well with different people.
+          </p>
         </div>
       </div>
       <div>
@@ -280,18 +327,26 @@ const SoftSkillsSection: React.FC = () => {
 
 const ContactSection: React.FC = () => {
   return (
-    <section className='flex-column flex-gap-large'>
-      <SectionHeader title='Contact' description='Get in touch' />
+    <section className="flex-column flex-gap-large">
+      <SectionHeader title="Contact" description="Get in touch" />
       <div className="grid-50-50">
-        <div className='flex-column flex-gap-large'>
-          <p>I'm always happy to hear about exciting opportunities, and build valuable connections. Let's connect! You can send an e-mail or fill out the form. I’ll add the fourth line for the sake of layout.</p>
+        <div className="flex-column flex-gap-large">
+          <p>
+            I'm always happy to hear about exciting opportunities, and build
+            valuable connections. Let's connect! You can send an e-mail or fill
+            out the form. I’ll add the fourth line for the sake of layout.
+          </p>
           <div className="flex-column flex-gap-medium">
-            <h3 className='text-large fw-medium text-white-600'>Contact me via e-mail</h3>
-            <CopyEmail email='mikhail-gostev.dev.gmail.com' />
+            <h3 className="text-large fw-medium text-white-600">
+              Contact me via e-mail
+            </h3>
+            <CopyEmail email="mikhail-gostev.dev.gmail.com" />
           </div>
           <div className="flex-column flex-gap-medium">
-            <h3 className='text-large fw-medium text-white-600'>Check out my socials</h3>
-            <div className='flex-gap-medium text-large text-white-600'>
+            <h3 className="text-large fw-medium text-white-600">
+              Check out my socials
+            </h3>
+            <div className="flex-gap-medium text-large text-white-600">
               <i className="fa-brands fa-telegram"></i>
               <i className="fa-brands fa-linkedin"></i>
               <i className="fa-brands fa-github"></i>
@@ -299,10 +354,12 @@ const ContactSection: React.FC = () => {
           </div>
         </div>
         <div className="flex-column flex-gap-extra-large">
-          <FormField label='Имя' />
-          <FormField label='Email' />
-          <FormField type='textarea' label='Сообщение' />
-          <Button type="primary" size="medium" className='fluid'>Отправить</Button>
+          <FormField label="Имя" />
+          <FormField label="Email" />
+          <FormField type="textarea" label="Сообщение" />
+          <Button type="primary" size="medium" className="fluid">
+            Отправить
+          </Button>
         </div>
       </div>
     </section>
@@ -312,12 +369,12 @@ const ContactSection: React.FC = () => {
 const Home: React.FC = () => {
   return (
     <>
-      <HeroSection/>
-      <JobExperienceSection/>
-      <FeaturedProjectSection/>
-      <SkillsSection/>
-      <SoftSkillsSection/>
-      <ContactSection/>
+      <HeroSection />
+      <JobExperienceSection />
+      <FeaturedProjectSection />
+      <SkillsSection />
+      <SoftSkillsSection />
+      <ContactSection />
     </>
   )
 }

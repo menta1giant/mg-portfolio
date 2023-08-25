@@ -1,17 +1,33 @@
 @function display-font-size($width) {
-  @return calc(($width - $container-horizontal-padding-desktop * 2) / 23 * 1.66)
+  @return calc(
+    ($width - $container-horizontal-padding-desktop * 2) / 23 * 1.66
+  );
 }
 
 .benefit-proposition {
   width: 100%;
 
   font-weight: $fw-bold;
-  font-size: clamp(4rem, display-font-size(100vw), display-font-size($desktop-breakpoint));
+  font-size: clamp(
+    4rem,
+    display-font-size(100vw),
+    display-font-size($desktop-breakpoint)
+  );
   color: $white-400;
   text-align: center;
-  
+
   &--active {
-    background: var(--gradient-dark-hero-section, linear-gradient(85deg, #52848F 2.08%, #54A986 28.65%, #2C9C6D 46.88%, #397F8E 66.15%, #2B5963 100%));
+    background: var(
+      --gradient-dark-hero-section,
+      linear-gradient(
+        85deg,
+        #52848f 2.08%,
+        #54a986 28.65%,
+        #2c9c6d 46.88%,
+        #397f8e 66.15%,
+        #2b5963 100%
+      )
+    );
 
     -webkit-background-clip: text;
     background-clip: text;
@@ -21,7 +37,8 @@
     animation: backgroundMove 20s ease-in-out infinite alternate;
   }
 
-  span, h1 {
+  span,
+  h1 {
     display: inline;
     white-space: pre-wrap;
   }

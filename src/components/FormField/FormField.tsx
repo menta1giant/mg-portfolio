@@ -5,20 +5,16 @@ import styles from './form-field.module.scss'
 type FieldType = 'textarea' | 'text' | 'email'
 
 interface IFormFieldProps {
-  label: string,
+  label: string
   type?: FieldType
 }
 
-const FormField: React.FC<IFormFieldProps> = ({label, type='text'}) => {
+const FormField: React.FC<IFormFieldProps> = ({ label, type = 'text' }) => {
   return (
     <div className={styles['mg-form-field']}>
       <label>
         <span>{label}</span>
-        {type === 'textarea' ? (
-          <Textarea/>
-        ) : (
-          <Input type={type}/>
-        )}
+        {type === 'textarea' ? <Textarea /> : <Input type={type} />}
       </label>
     </div>
   )

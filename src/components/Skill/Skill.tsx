@@ -14,25 +14,36 @@ const Skill: React.FC<ISkill> = ({ name, description, logo, projectsUsed }) => {
   }
 
   return (
-    <article className={`${styles['skill']} ${isAccordionOpened ? styles['skill--active'] : ''}`}>
-      <button className={styles['skill__title']} onClick={handleToggleAccordion}>
+    <article
+      className={`${styles['skill']} ${
+        isAccordionOpened ? styles['skill--active'] : ''
+      }`}
+    >
+      <button
+        className={styles['skill__title']}
+        onClick={handleToggleAccordion}
+      >
         <Image
           src={logo}
           alt={name}
           width={LOGO_SIZE_SMALL}
           height={LOGO_SIZE_SMALL}
         />
-        <span>{ name }</span>
+        <span>{name}</span>
       </button>
-      {isAccordionOpened && (<div className={styles['skill__body']}>
-        <p>{ description }</p>
-        <span className='text-large fw-medium'>Where used:</span>
-        <ul>
-          { projectsUsed.map(project => (
-            <li className="li"><a href={project.link}>{project.name}</a></li>
-          )) }
-        </ul>
-      </div>)}
+      {isAccordionOpened && (
+        <div className={styles['skill__body']}>
+          <p>{description}</p>
+          <span className="text-large fw-medium">Where used:</span>
+          <ul>
+            {projectsUsed.map((project) => (
+              <li className="li">
+                <a href={project.link}>{project.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </article>
   )
 }

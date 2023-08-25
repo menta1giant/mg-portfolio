@@ -7,13 +7,15 @@
   font-weight: $fw-semi-bold;
   color: $primary-700;
 
-  transition: color .3s ease, translate .1s ease-out;
+  transition:
+    color 0.3s ease,
+    translate 0.1s ease-out;
 
   &:focus-visible {
     outline: 1px solid currentColor;
-    outline-offset: .25rem;
+    outline-offset: 0.25rem;
   }
-  
+
   &:hover {
     color: $white-600;
   }

@@ -9,7 +9,7 @@ $fw-medium: 500;
 $fw-semi-bold: 600;
 $fw-bold: 700;
 
-$fs-extra-small: .75rem;
+$fs-extra-small: 0.75rem;
 $fs-small: 1rem;
 $fs-medium: 1.25rem;
 $fs-large: 1.5rem;
@@ -89,7 +89,7 @@ $lh-body: 1.6;
   font-weight: $fw-bold;
 
   text-transform: uppercase;
-  letter-spacing: .05em; 
+  letter-spacing: 0.05em;
 }
 
 @mixin text-display {

@@ -7,11 +7,8 @@ interface IInputProps {
   type?: TInputTypes
 }
 
-
-const Input: React.FC<IInputProps> = ({type='text'}) => {
-  return (
-    <input className={styles['mg-text-input']} type={type} />
-  )
+const Input: React.FC<IInputProps> = ({ type = 'text' }) => {
+  return <input className={styles['mg-text-input']} type={type} />
 }
 
 export default Input
