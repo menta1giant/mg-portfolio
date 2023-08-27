@@ -1,6 +1,10 @@
+'use client'
+
 import styles from './header.module.scss'
 import Button from '@/components/Button/Button'
 import Navigation from './Navigation'
+import ToggleThemeButton from '@/components/ToggleThemeButton/ToggleThemeButton'
+import ToggleLanguageButton from '@/components/ToggleLanguageButton/ToggleLanguageButton'
 import Image from 'next/image'
 import AnimatedElements from '@/components/AnimatedElements/AnimatedElements'
 
@@ -22,12 +26,8 @@ export default function Header() {
           <span className="desktop">GET IN TOUCH</span>
           <span className="mobile">{'==>'}</span>
         </Button>
-        <Button type="transparent-green">
-          <i className="fa-solid fa-sun"></i>
-        </Button>
-        <Button type="transparent-green" className="desktop">
-          <i className="fa-solid fa-globe"></i>
-        </Button>
+        <ToggleThemeButton />
+        <ToggleLanguageButton />
       </div>
     </header>
   )

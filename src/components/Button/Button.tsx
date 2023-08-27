@@ -1,6 +1,7 @@
 'use client'
 
-import React from 'react'
+import React, { ReactNode, useMemo } from 'react'
+import Link from 'next/link'
 import './button.scss'
 import { ButtonProps } from '@/interfaces/button'
 
@@ -31,29 +32,47 @@ const handleChange = (
     btnSpan.style.left = `${relX}px`
   }
 }
+
+const ButtonContent: React.FC<{ children: ReactNode }> = ({ children }) => {
+  return (
+    <>
+      <span className="mg-button__overlay"></span>
+      <div>{children}</div>
+    </>
+  )
+}
+
 const Button: React.FC<CommonButtonProps> = ({
   children,
   onClick,
   className = '',
   size = 'medium',
-  as = 'button',
   type = 'primary',
+  linkProps = { href: '/' },
+  useLink = false,
 }) => {
-  const that = {
-    as,
-  }
+  const commonProps = useMemo(() => {
+    return {
+      className: `mg-button mg-button--${size} mg-button--${type} ${className}`,
+      onClick,
+      onMouseEnter: handleChange,
+      onMouseLeave: handleChange,
+    }
+  }, [size, type, className, onClick])
 
-  return (
-    <that.as
-      className={`mg-button mg-button--${size} mg-button--${type} ${className}`}
-      onClick={onClick}
-      onMouseEnter={handleChange}
-      onMouseLeave={handleChange}
-    >
-      <span className="mg-button__overlay"></span>
-      <div>{children}</div>
-    </that.as>
-  )
+  if (useLink) {
+    return (
+      <Link {...commonProps} {...linkProps}>
+        <ButtonContent>{children}</ButtonContent>
+      </Link>
+    )
+  } else {
+    return (
+      <button {...commonProps}>
+        <ButtonContent>{children}</ButtonContent>
+      </button>
+    )
+  }
 }
 
 export default Button

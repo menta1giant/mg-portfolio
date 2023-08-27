@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 import { gsap } from 'gsap'
 import { useCallback, useEffect, useRef } from 'react'
@@ -28,10 +26,14 @@ const HeroSectionAnimatedElements: React.FC = () => {
 
     cursor.classList.remove('visually-hidden')
 
-    const elem2Rect = targetElement.getBoundingClientRect()
+    const targetElementRect = targetElement.getBoundingClientRect()
+    const cursorParentRect = cursor.parentElement!.getBoundingClientRect()
 
-    const translateX = elem2Rect.left + targetElement.clientWidth / 2
-    const translateY = elem2Rect.top + targetElement.clientHeight / 2
+    const translateX =
+      targetElementRect.left +
+      targetElement.clientWidth / 2 -
+      cursorParentRect.left
+    const translateY = targetElementRect.top + targetElement.clientHeight / 2
 
     gsap.to('.cursor', {
       left: translateX,
@@ -62,8 +64,11 @@ const HeroSectionAnimatedElements: React.FC = () => {
     const mockEnterElem = mockEnter.current!
     const cursorPulse = mockCursorPulse.current!
     const packageNameRect = packageName.getBoundingClientRect()
+    const targetParentRect =
+      mockEnterElem.parentElement!.getBoundingClientRect()
 
-    const translateX = packageNameRect.right + CURSOR_PULSE_OFFSET
+    const translateX =
+      packageNameRect.right + CURSOR_PULSE_OFFSET - targetParentRect.left
     const translateY = packageNameRect.top + CURSOR_PULSE_OFFSET
 
     gsap.to('.cursor', {

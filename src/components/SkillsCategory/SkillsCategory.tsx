@@ -11,7 +11,7 @@ const SkillsCategory: React.FC<ISkillsCategory> = ({ name, items }) => {
       <span className="text-h2 fw-semi-bold">{name}</span>
       <div className={styles['skills-wrapper']}>
         {items.slice(0, 4).map((item) => (
-          <Skill {...item}></Skill>
+          <Skill {...item} key={item.name}></Skill>
         ))}
       </div>
       <TransparentButton size="large">Show more...</TransparentButton>

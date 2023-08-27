@@ -67,16 +67,12 @@ const HeroSection: React.FC = () => {
               title="Mikhail Gostev"
               description="Fullstack Web Developer"
             />
-            <p>
-              Я талантливый разработчик из Москвы. Умею создавать красивые и
-              доступные сайты. За моими плечами более 4-х лет кодинга и
-              несколько проектов.
-            </p>
+            <p>asd</p>
             <div className={styles['cta-container']}>
               <Button type="primary" size="large">
                 View projects
               </Button>
-              <Button as="a" type="secondary" size="large">
+              <Button type="secondary" size="large">
                 Hire me
               </Button>
             </div>
@@ -254,7 +250,7 @@ const FeaturedProjectSection: React.FC = () => {
                 <Button type="primary" size="medium">
                   Посетить сайт
                 </Button>
-                <Button as="a" type="secondary" size="medium">
+                <Button type="secondary" size="medium">
                   Читать далее
                 </Button>
               </div>

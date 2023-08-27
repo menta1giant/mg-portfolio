@@ -4,19 +4,17 @@
   --font-mono: #{$ff-mono};
   --card-shadow: 0px 2px 4px 2px rgba(46, 43, 78, 0.1);
 
-  #light {
-    --background-color: #{$white-100};
+  --background-color: #{$white-100};
 
-    --font-color: #{$white-700};
-    --heading-color: #{$white-600};
-  }
+  --font-color: #{$white-700};
+  --heading-color: #{$white-600};
+}
 
-  #dark {
-    --background-color: #{$white-800};
+[data-theme='dark'] {
+  --background-color: #{$white-800};
 
-    --font-color: #{$white-400};
-    --heading-color: #{$primary-300};
-  }
+  --font-color: #{$white-400};
+  --heading-color: #{$primary-300};
 }
 
 * {
@@ -81,4 +79,10 @@ button {
 i {
   font-size: 1.5em;
   line-height: 1em;
+}
+
+img {
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
 }

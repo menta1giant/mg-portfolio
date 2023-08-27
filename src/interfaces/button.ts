@@ -1,13 +1,13 @@
 import { ReactNode } from 'react'
+import Link from 'next/link'
 
 export type ButtonSizes = 'medium' | 'large'
-
-export type AsElement = 'button' | 'a'
 
 export interface ButtonProps {
   children: ReactNode
   className?: string
   size?: ButtonSizes
-  as?: AsElement
+  useLink?: boolean
+  linkProps?: React.ComponentProps<typeof Link>
   onClick?: () => void
 }
