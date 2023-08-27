@@ -1,0 +1,10 @@
+{
+  "Hero": {
+    "test": "Hello",
+    "benefit": "Let's build amazing web"
+  },
+  "LocaleLayout": {
+    "title": "Mikhail Gostev",
+    "description": "Portfolio of a fullstack web developer"
+  }
+}

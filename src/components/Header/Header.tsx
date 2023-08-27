@@ -1,15 +1,19 @@
 import styles from './header.module.scss'
+
+import Image from 'next/image'
 import Button from '@/components/Button/Button'
 import Navigation from './Navigation'
 import ToggleLanguageButton from '@/components/ToggleLanguageButton/ToggleLanguageButton'
-import Image from 'next/image'
 import AnimatedElements from '@/components/AnimatedElements/AnimatedElements'
 
-import dynamic from 'next/dynamic';
-const ToggleThemeButton = dynamic(() => 
-  import('@/components/ToggleThemeButton/ToggleThemeButton'), {
+import dynamic from 'next/dynamic'
+
+const ToggleThemeButton = dynamic(
+  () => import('@/components/ToggleThemeButton/ToggleThemeButton'),
+  {
     ssr: false,
-  });
+  },
+)
 
 export default function Header() {
   return (

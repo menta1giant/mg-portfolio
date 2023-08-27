@@ -1,27 +1,35 @@
 'use client'
 
 import Button from '@/components/Button/Button'
-import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks'
-import { toggleLanguage } from '@/lib/redux/slices/languageSlice'
+
+import { useLocale } from 'next-intl'
+import { usePathname, useRouter } from 'next-intl/client'
+import { useTransition } from 'react'
 
 const ToggleLanguageButton: React.FC = () => {
-  const isLanguageRus = useAppSelector((state) => state.language.isLanguageRus)
+  const [isPending, startTransition] = useTransition()
+  const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
 
-  const dispatch = useAppDispatch()
-
-  const linkProps = {
-    href: `/`,
+  function toggleLanguage() {
+    console.log({ pathname, locale })
+    startTransition(() => {
+      router.replace(pathname, { locale: locale === 'ru' ? 'en' : 'ru' })
+    })
   }
 
   return (
     <Button
       type="transparent-green"
       className="desktop"
-      linkProps={linkProps}
-      useLink
-      onClick={() => dispatch(toggleLanguage())}
+      onClick={toggleLanguage}
     >
-      f
+      <i
+        className={`fa-solid ${
+          locale === 'ru' ? 'fa-earth-europe' : 'fa-earth-americas'
+        }`}
+      ></i>
     </Button>
   )
 }

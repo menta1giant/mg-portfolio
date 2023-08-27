@@ -2,24 +2,24 @@
 
 import './benefit-proposition.scss'
 import { useEffect, useRef, useState } from 'react'
-import {
-  dispatchCustomEvent,
-  PACKAGE_IMPORTED_EVENT,
-} from '@/utils/customEvent'
+import { PACKAGE_IMPORTED_EVENT } from '@/utils/customEvent'
+import { useTranslations } from 'next-intl'
 
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 const BenefitProposition: React.FC = () => {
+  const t = useTranslations('Hero')
+
   const textContainer = useRef<HTMLDivElement>(null)
   const [texts, setTexts] = useState({
     scrambled: 'FULLSTACK WEB DEVELOPER',
     unscrambled: '',
   })
-  const phrase = 'ПОСТРОИМ КРУТОТУ ВМЕСТЕ'
+  const phrase = t('benefit').toUpperCase()
+  let interval: ReturnType<typeof setTimeout> | null = null
 
   function initiateScramblePhrase() {
     let iteration = 0
-    let interval: ReturnType<typeof setTimeout> | null = null
 
     interval && clearInterval(interval)
 
@@ -48,6 +48,14 @@ const BenefitProposition: React.FC = () => {
 
   useEffect(() => {
     document.addEventListener(PACKAGE_IMPORTED_EVENT, initiateScramblePhrase)
+
+    return () => {
+      document.removeEventListener(
+        PACKAGE_IMPORTED_EVENT,
+        initiateScramblePhrase,
+      )
+      interval && clearInterval(interval)
+    }
   }, [])
 
   return (

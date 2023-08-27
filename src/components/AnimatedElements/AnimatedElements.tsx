@@ -112,7 +112,10 @@ const HeroSectionAnimatedElements: React.FC = () => {
 
     handleLogoClick()
 
-    return () => logo.removeEventListener('click', handleLogoClick)
+    return () => {
+      logo.removeEventListener('click', handleLogoClick)
+      document.removeEventListener(TYPEWRITER_FINISHED_EVENT, clickMockEnter)
+    }
   }, [handleLogoClick])
 
   return (
