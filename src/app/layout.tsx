@@ -3,7 +3,7 @@ import 'the-new-css-reset/css/reset.css'
 import Header from '@/components/Header/Header'
 import Footer from '@/components/Footer/Footer'
 import type { Metadata } from 'next'
-import { Providers } from '@/lib/redux/providers'
+import { Providers } from '@/lib/providers'
 
 export const metadata: Metadata = {
   title: 'Mikhail Gostev',
@@ -18,7 +18,7 @@ export default function RootLayout({
   params: { lang: string }
 }) {
   return (
-    <html lang={lang}>
+    <html lang={lang} suppressHydrationWarning>
       <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
         <link

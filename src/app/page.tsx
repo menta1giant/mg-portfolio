@@ -278,7 +278,7 @@ const SkillsSection: React.FC = () => {
         <SectionHeader title="Hard skills" description=" know a lot of stuff" />
         <div className="grid-50-50">
           {SKILLS_CATEGORIES.map((category) => (
-            <SkillsCategory {...category} />
+            <SkillsCategory {...category} key={category.name} />
           ))}
         </div>
       </div>
