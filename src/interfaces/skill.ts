@@ -5,7 +5,7 @@ interface IProject {
 
 export interface ISkill {
   name: string
-  description: string
   logo: string
   projectsUsed: IProject[]
+  id: string
 }

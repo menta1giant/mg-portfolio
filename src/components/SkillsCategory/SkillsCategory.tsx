@@ -1,20 +1,33 @@
+'use client'
+
 import TransparentButton from '@/components/TransparentButton/TransparentButton'
-import styles from './skills-category.module.scss'
 import Skill from '@/components/Skill/Skill'
 import { ISkillsCategory } from '@/interfaces/skillsCategory'
+import { useTranslations, createTranslator } from 'next-intl'
 
-const SkillsCategory: React.FC<ISkillsCategory> = ({ name, items }) => {
+interface SkillsCategoryProps {
+  messages: any
+  locale: string
+}
+
+const SkillsCategory: React.FC<ISkillsCategory & SkillsCategoryProps> = ({
+  name,
+  items,
+  locale,
+  messages,
+}) => {
+  const t = useTranslations('HardSkills')
+  const translator = createTranslator({ locale, messages, onError: () => {} })
+
   return (
-    <article
-      className={`flex-column flex-gap-large ${styles['skills-category']}`}
-    >
-      <span className="text-h2 fw-semi-bold">{name}</span>
-      <div className={styles['skills-wrapper']}>
+    <article className="flex-column flex-gap-large skills-category">
+      <span className="text-h2 fw-semi-bold">{translator(name)}</span>
+      <div className="skills-wrapper">
         {items.slice(0, 4).map((item) => (
-          <Skill {...item} key={item.name}></Skill>
+          <Skill {...item} key={item.name} translator={translator}></Skill>
         ))}
       </div>
-      <TransparentButton size="large">Show more...</TransparentButton>
+      <TransparentButton size="large">{t('show-more')}</TransparentButton>
     </article>
   )
 }

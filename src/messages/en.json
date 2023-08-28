@@ -1,10 +1,86 @@
 {
+  "Header": {
+    "contact-button-text": "Get in touch",
+    "change-theme-button-tooltip": "Change theme",
+    "change-language-button-tooltip": "Switch language to {language}"
+  },
   "Hero": {
-    "test": "Hello",
-    "benefit": "Let's build amazing web"
+    "description": "I'm a talented developer from Moscow. I know how to make beautiful and accessible websites. I have more than 4 years of coding behing my back along with a handful of projects.",
+    "benefit": "Let's build amazing web",
+    "heading": "Mikhail Gostev",
+    "subheading": "Fullstack web developer",
+    "primary-cta": "View projects",
+    "secondary-cta": "Hire me",
+    "feature-1-title": "3+ years of coding",
+    "feature-1-description": "Including full-time employment",
+    "feature-2-title": "Working with",
+    "feature-3-title": "Versatile skillset",
+    "feature-3-description": "Following the latest trends"
+  },
+  "JobExperience": {
+    "heading": "Job experience",
+    "subheading": "I worked on real projects",
+    "frontend-developer-job-title": "Frontend Developer",
+    "paragraph1": "Roistat specializes in business analytics.",
+    "paragraph2": "During 16 months working in the company, I had the following responsibilities:",
+    "responsibility1": "Developing new features",
+    "responsibility2": "Supporting existing features",
+    "responsibility3": "Code refactoring",
+    "image-alt": "A man sitting on a stack of books"
+  },
+  "FeaturedProject": {
+    "heading": "Featured project",
+    "subheading": "Check out my latest work",
+    "role": "Role:",
+    "role-design": "Design",
+    "role-frontend": "Frontend",
+    "role-backend": "Backend",
+    "stack": "Stack:",
+    "and-n-more": "and {value, number} more...",
+    "paragraph1": "Nerif is an extension of my passion project that was born in late 2020. When I imagined data science as an important part of my future, I started working on an algorithm that would be able to predict the results of CS:GO matches.",
+    "paragraph2": "It has proven to be unsuccessful, so I set a thought experiment: What would happen if it worked and the premise was actually marketable? That’s how Nerif was born.",
+    "primary-cta": "Visit website",
+    "secondary-cta": "Source code",
+    "image-alt": "Mobile and desktop presentation of Nerif"
+  },
+  "HardSkills": {
+    "heading": "Hard skills",
+    "subheading": "I know a lot of stuff",
+    "show-more": "Show more",
+    "where-used": "Где используется:"
+  },
+  "SoftSkills": {
+    "heading": "Soft skills",
+    "subheading": "Chill out",
+    "paragraph1": "I used to tutor English and Computer science, and still haven’t lost passion for <highlight>teaching.</highlight> I love sharing my knowledge with people and I’m quite proficient at it too",
+    "paragraph2": "I enjoy playing board games, whether it be with close friends or random people in an anticafe. Actually, I regularly host board game events there, which requires me to be <highlight>responsible,</highlight> good at <highlight>leadership,</highlight> and get along well with different people.",
+    "image-alt": "People gathered for board games"
+  },
+  "Contact": {
+    "heading": "Contact",
+    "subheading": "Get in touch",
+    "paragraph1": "I'm always happy to hear about exciting opportunities, and build valuable connections. Let's connect! You can send an e-mail or fill out the form. I’ll add the fourth line for the sake of layout.",
+    "copy-email-label": "Contact me via e-mail",
+    "copy-email-tooltip": "Copy email",
+    "socials-label": "Check out my socials",
+    "name-label": "Name",
+    "email-label": "Email",
+    "message-label": "Message",
+    "send-button-text": "Send message"
+  },
+  "Footer": {
+    "copyright-text": "Copyright © 2023 <b>Mikhail Gostev.</b> All rights reserved"
   },
   "LocaleLayout": {
     "title": "Mikhail Gostev",
     "description": "Portfolio of a fullstack web developer"
+  },
+  "Months": {
+    "february": "February",
+    "may": "May",
+    "july": "July"
+  },
+  "Common": {
+    "logo-alt": "{logoOwner} logo"
   }
 }

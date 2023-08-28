@@ -1,0 +1,18 @@
+{
+  "Frontend": "Frontend",
+  "Backend": "Backend",
+  "Design": "Дизайн",
+  "Tools": "Инструменты и прочее",
+  "VueJS": {
+    "name": "VueJS",
+    "description": "У меня больше всего опыта с этим фреймворком"
+  },
+  "React": {
+    "name": "React",
+    "description": "У меня больше всего опыта с этим фреймворком"
+  },
+  "Typescript": {
+    "name": "Typecript",
+    "description": "У меня больше всего опыта с этим фреймворком"
+  }
+}

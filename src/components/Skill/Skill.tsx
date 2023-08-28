@@ -5,13 +5,29 @@ import Image from 'next/image'
 import { LOGO_SIZE_SMALL } from '@/utils/image'
 import { useState } from 'react'
 import { ISkill } from '@/interfaces/skill'
+import { useTranslations } from 'next-intl'
 
-const Skill: React.FC<ISkill> = ({ name, description, logo, projectsUsed }) => {
+interface SkillsProps {
+  translator: (...args: any[]) => React.ReactNode
+}
+
+const Skill: React.FC<ISkill & SkillsProps> = ({
+  name,
+  id,
+  logo,
+  projectsUsed,
+  translator,
+}) => {
+  const t = useTranslations('HardSkills')
+
   const [isAccordionOpened, setIsAccordionOpened] = useState(false)
 
   const handleToggleAccordion = () => {
     setIsAccordionOpened(!isAccordionOpened)
   }
+
+  const localizedSkillName = translator(`${id}.name`)
+  const localizedSkillDescription = translator(`${id}.description`)
 
   return (
     <article
@@ -25,20 +41,20 @@ const Skill: React.FC<ISkill> = ({ name, description, logo, projectsUsed }) => {
       >
         <Image
           src={logo}
-          alt={name}
+          alt={localizedSkillName!.toString()}
           width={LOGO_SIZE_SMALL}
           height={LOGO_SIZE_SMALL}
         />
-        <span>{name}</span>
+        <span>{localizedSkillName}</span>
       </button>
       {isAccordionOpened && (
         <div className={styles['skill__body']}>
-          <p>{description}</p>
-          <span className="text-large fw-medium">Where used:</span>
+          <p>{localizedSkillDescription}</p>
+          <span className="text-large fw-medium">{t('where-used')}</span>
           <ul>
             {projectsUsed.map((project) => (
-              <li className="li">
-                <a href={project.link}>{project.name}</a>
+              <li className="li" key={project.name}>
+                <a href={project.link}>{translator(project.name)}</a>
               </li>
             ))}
           </ul>

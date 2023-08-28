@@ -87,7 +87,10 @@
 .cta-container {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
+
+  @media screen and (max-width: $tablet-breakpoint) {
+    flex-wrap: wrap;
+  }
 }
 
 .job-experience-section {
@@ -150,4 +153,11 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+}
+
+.skills-category {
+  @include card;
+
+  padding: 1.75rem;
+  height: min-content;
 }

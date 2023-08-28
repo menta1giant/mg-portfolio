@@ -1,0 +1,18 @@
+{
+  "Frontend": "Frontend",
+  "Backend": "Backend",
+  "Design": "Design",
+  "Tools": "Tools",
+  "VueJS": {
+    "name": "VueJS",
+    "description": "I have most experience with this framework"
+  },
+  "React": {
+    "name": "React",
+    "description": "I have most experience with this framework"
+  },
+  "Typescript": {
+    "name": "Typecript",
+    "description": "I have most experience with this framework"
+  }
+}

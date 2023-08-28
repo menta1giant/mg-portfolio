@@ -4,7 +4,7 @@ import Footer from '@/components/Footer/Footer'
 import { Providers } from '@/lib/providers'
 
 import { ReactNode } from 'react'
-import { createTranslator, NextIntlClientProvider } from 'next-intl'
+import { createTranslator } from 'next-intl'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 
@@ -76,12 +76,10 @@ export default async function LocaleLayout({
         ></script>
       </head>
       <body>
-        <Providers>
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <Header />
-            <main>{children}</main>
-            <Footer />
-          </NextIntlClientProvider>
+        <Providers locale={locale} messages={messages}>
+          <Header />
+          <main>{children}</main>
+          <Footer />
         </Providers>
       </body>
     </html>
