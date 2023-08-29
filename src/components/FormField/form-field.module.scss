@@ -12,18 +12,18 @@
 
       padding: 0.25rem;
       background: var(--background-color);
-      color: $primary-700;
+      color: var(--input-label-color-focus);
     }
   }
 
   @supports (selector(:has(*))) {
     label span {
-      color: $white-500;
+      color: var(--input-label-color);
     }
 
     &:has(:focus) {
       label span {
-        color: $primary-700;
+        color: var(--input-label-color-focus);
       }
     }
   }

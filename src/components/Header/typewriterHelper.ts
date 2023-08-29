@@ -20,11 +20,11 @@ function createTypewriterEffect(node: Element, speed: number) {
 
       if (node.id === 'package-name') {
         setTimeout(() => {
-          node.classList.add('text-white-400')
+          node.classList.add('text-bleak')
           node.classList.remove('visually-hidden')
 
           setTimeout(() => {
-            node.classList.remove('text-white-400')
+            node.classList.remove('text-bleak')
             resolve(true)
           }, 800)
 

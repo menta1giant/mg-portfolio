@@ -26,6 +26,10 @@
   @include text-heading;
 }
 
+.text-bleak {
+  color: var(--text-bleak-color);
+}
+
 .text-monospace {
   @include text-monospace;
 }
@@ -60,7 +64,7 @@
   @include text-medium;
   @include fw-semi-bold;
 
-  color: $accent-500;
+  color: var(--text-accent-color);
 }
 
 .fade-in {

@@ -1,3 +1,11 @@
+:root {
+  --transparent-button-color: #{$primary-700};
+}
+
+[data-theme='dark'] {
+  --transparent-button-color: #{$primary-500};
+}
+
 .mg-transparent-button {
   text-align: center;
   align-self: flex-start;
@@ -5,7 +13,7 @@
 
   font-family: $ff-cta;
   font-weight: $fw-semi-bold;
-  color: $primary-700;
+  color: var(--transparent-button-color);
 
   transition:
     color 0.3s ease,
@@ -17,7 +25,7 @@
   }
 
   &:hover {
-    color: $white-600;
+    color: var(--heading-color);
   }
 
   &:active {

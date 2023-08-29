@@ -8,6 +8,15 @@
 
   --font-color: #{$white-700};
   --heading-color: #{$white-600};
+
+  --text-accent-color: #{$accent-500};
+  --text-bleak-color: #{$white-400};
+
+  --input-background-color-disabled: #{$white-300};
+  --input-border-color: #{$white-400};
+  --input-border-color-focus: #{$primary-500-alpha-60};
+  --input-label-color: #{$white-500};
+  --input-label-focus-color: #{$primary-700};
 }
 
 [data-theme='dark'] {
@@ -15,6 +24,13 @@
 
   --font-color: #{$white-400};
   --heading-color: #{$primary-300};
+
+  --text-accent-color: #{$accent-300};
+  --text-bleak-color: #{$white-100-alpha-10};
+
+  --input-background-color-disabled: #{$white-700};
+  --input-border-color: #{$white-600};
+  --input-label-focus-color: #{$primary-300};
 }
 
 * {

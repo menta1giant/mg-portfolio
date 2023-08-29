@@ -1,17 +1,32 @@
 :root {
+  --primary-button-color: #{$white-100};
+  --primary-button-background-color: #{$accent-500};
+
+  --primary-green-button-background-color: #{$secondary-700};
+
+  --secondary-button-color: #{$white-700};
+  --secondary-button-background-color: #{$white-200};
+
   --transparent-green-button-color: #{$secondary-700};
   --button-box-shadow: 0px 2px 3px 0px rgba(46, 64, 68, 0.25);
+
+  --button-overlay-background-color: #{$primary-700};
 }
 
 [data-theme='dark'] {
+  --primary-button-background-color: #{$accent-800};
+
+  --primary-green-button-background-color: #{$secondary-700-alpha-60};
+
+  --secondary-button-color: #{$white-200};
+  --secondary-button-background-color: #{$white-100-alpha-10};
+
   --transparent-green-button-color: #{$white-200};
   --button-box-shadow: none;
 }
 
 .mg-button {
   @include text-button;
-
-  --primary-button-color: #{$white-100};
 
   text-align: center;
   align-self: flex-start;
@@ -44,17 +59,17 @@
   }
 
   &--primary {
-    background-color: $accent-500;
+    background-color: var(--primary-button-background-color);
 
     color: var(--primary-button-color);
 
     &:focus-visible {
-      outline-color: $accent-500;
+      outline-color: var(--primary-button-background-color);
     }
   }
 
   &--primary-green {
-    background-color: $secondary-700;
+    background-color: var(--primary-green-button-background-color);
 
     color: var(--primary-button-color);
   }
@@ -85,8 +100,8 @@
   }
 
   &--secondary {
-    background-color: $white-200;
-    color: $white-700;
+    background-color: var(--secondary-button-background-color);
+    color: var(--secondary-button-color);
   }
 
   &:hover {
@@ -98,9 +113,9 @@
     }
   }
 
-  &:active {
+  /* &:active {
     letter-spacing: 2px;
-  }
+  } */
 
   &__overlay {
     position: absolute;
@@ -110,7 +125,7 @@
       width 0.4s ease-in-out,
       height 0.4s ease-in-out;
     transform: translate(-50%, -50%);
-    background-color: $primary-700;
+    background-color: var(--button-overlay-background-color);
     height: 0%;
     width: 0%;
   }

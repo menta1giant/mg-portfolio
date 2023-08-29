@@ -131,7 +131,6 @@
   @include card;
 
   padding: 1.75rem;
-  background: $white-100;
 
   &__row {
     display: flex;
@@ -146,7 +145,7 @@
   padding: 0.25rem 0.5rem;
 
   background: $secondary-500-alpha-15;
-  color: $white-600;
+  color: var(--heading-color);
 }
 
 .skills-wrapper {
