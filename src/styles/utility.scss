@@ -101,6 +101,15 @@
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .nowrap {
   white-space: nowrap;
 }
@@ -190,4 +199,8 @@ strong.highlight {
 
 .fluid {
   width: 100%;
+}
+
+.icon-wrapper {
+  line-height: 0;
 }

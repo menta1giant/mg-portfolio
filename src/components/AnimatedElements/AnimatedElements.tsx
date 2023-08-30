@@ -10,6 +10,10 @@ import {
   PACKAGE_IMPORTED_EVENT,
   TYPEWRITER_FINISHED_EVENT,
 } from '@/utils/customEvent'
+import {
+  getLocalStorageDataByKey,
+  LANDING_PAGE_VISITED,
+} from '@/utils/localStorage'
 
 const HeroSectionAnimatedElements: React.FC = () => {
   const mockCursor = useRef<HTMLImageElement>(null)
@@ -29,12 +33,8 @@ const HeroSectionAnimatedElements: React.FC = () => {
     cursor.classList.remove('visually-hidden')
 
     const targetElementRect = targetElement.getBoundingClientRect()
-    const cursorParentRect = cursor.parentElement!.getBoundingClientRect()
 
-    const translateX =
-      targetElementRect.left +
-      targetElement.clientWidth / 2 -
-      cursorParentRect.left
+    const translateX = targetElementRect.left + targetElement.clientWidth / 2
     const translateY = targetElementRect.top + targetElement.clientHeight / 2
 
     gsap.to('.cursor', {
@@ -66,11 +66,8 @@ const HeroSectionAnimatedElements: React.FC = () => {
     const mockEnterElem = mockEnter.current!
     const cursorPulse = mockCursorPulse.current!
     const packageNameRect = packageName.getBoundingClientRect()
-    const targetParentRect =
-      mockEnterElem.parentElement!.getBoundingClientRect()
 
-    const translateX =
-      packageNameRect.right + CURSOR_PULSE_OFFSET - targetParentRect.left
+    const translateX = packageNameRect.right + CURSOR_PULSE_OFFSET
     const translateY = packageNameRect.top + CURSOR_PULSE_OFFSET
 
     gsap.to('.cursor', {
@@ -110,7 +107,13 @@ const HeroSectionAnimatedElements: React.FC = () => {
 
     logo.addEventListener('click', handleLogoClick)
 
-    handleLogoClick()
+    const hasBeenVisited = Boolean(
+      getLocalStorageDataByKey(LANDING_PAGE_VISITED),
+    )
+
+    if (!hasBeenVisited) {
+      handleLogoClick()
+    }
 
     return () => {
       logo.removeEventListener('click', handleLogoClick)

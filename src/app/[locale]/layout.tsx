@@ -1,4 +1,3 @@
-import 'the-new-css-reset/css/reset.css'
 import Header from '@/components/Header/Header'
 import Footer from '@/components/Footer/Footer'
 import { Providers } from '@/lib/providers'

@@ -3,12 +3,17 @@
 import { useRef, useEffect, useMemo, useCallback } from 'react'
 import styles from './header.module.scss'
 import { LOGO_CLICKED_EVENT } from '@/utils/customEvent'
-import { usePathname } from 'next/navigation'
+import { useState } from 'react'
 import processTextNodesSequentially from './typewriterHelper'
+import {
+  getLocalStorageDataByKey,
+  LANDING_PAGE_VISITED,
+} from '@/utils/localStorage'
 
 export default function Navigation() {
   const navigation = useRef<HTMLDivElement>(null)
-  const pathname = usePathname()
+
+  let [hasBeenVisited, setHasBeenVisited] = useState(false)
 
   function getNavigationNodes() {
     return navigation.current?.querySelectorAll('span, a')!
@@ -36,8 +41,14 @@ export default function Navigation() {
     processTextNodesSequentially(textNodes, speeds)
   }, [])
 
+  const shouldHideNavigation = useMemo(() => {
+    return !hasBeenVisited
+  }, [hasBeenVisited])
+
   useEffect(() => {
     document.addEventListener(LOGO_CLICKED_EVENT, initiateTypewriter)
+
+    setHasBeenVisited(Boolean(getLocalStorageDataByKey(LANDING_PAGE_VISITED)))
 
     return () =>
       document.removeEventListener(LOGO_CLICKED_EVENT, initiateTypewriter)
@@ -45,7 +56,7 @@ export default function Navigation() {
 
   return (
     <div
-      className={`${pathname === '/' ? 'visually-hidden' : ''} ${
+      className={`${shouldHideNavigation ? 'visually-hidden' : ''} ${
         styles.navigation
       }`}
       ref={navigation}

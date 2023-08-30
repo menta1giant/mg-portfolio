@@ -12,10 +12,9 @@ function createTypewriterEffect(node: Element, speed: number) {
       const overlay = document.createElement('span')
       overlay.classList.add('typewriter-overlay')
 
-      overlay.style.backgroundColor = 'var(--background-color)'
       overlay.style.position = 'absolute'
       overlay.style.width = `${text.length}ch`
-      overlay.style.height = '100%'
+      overlay.style.height = '120%'
       overlay.style.right = '0px'
 
       if (node.id === 'package-name') {

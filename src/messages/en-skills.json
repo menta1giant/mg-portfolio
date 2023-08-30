@@ -1,18 +1,115 @@
 {
   "Frontend": "Frontend",
   "Backend": "Backend",
-  "Design": "Design",
+  "Design": "UI / UX design",
   "Tools": "Tools",
   "VueJS": {
     "name": "VueJS",
-    "description": "I have most experience with this framework"
+    "description": "Progressive framework for building user interfaces in JavaScript. I have the most experience with this framework."
   },
   "React": {
     "name": "React",
-    "description": "I have most experience with this framework"
+    "description": "JavaScript library that helps create interactive user interfaces on websites."
   },
   "Typescript": {
     "name": "Typecript",
-    "description": "I have most experience with this framework"
-  }
+    "description": "Extension of the JavaScript programming language that allows adding static typing to code."
+  },
+  "HTML": {
+    "name": "HTML5",
+    "description": "Standard markup language for creating the structure of web pages."
+  },
+  "CSS": {
+    "name": "CSS3",
+    "description": "Style language used for formatting web pages."
+  },
+  "SCSS": {
+    "name": "SCSS",
+    "description": "CSS extension that adds additional features and syntactical capabilities for more convenient and structured styling."
+  },
+  "VueX": {
+    "name": "VueX",
+    "description": "Library for managing application state in Vue.js framework."
+  },
+  "Vuerouter": {
+    "name": "Vue router",
+    "description": "Official routing library for Vue.js framework."
+  },
+  "ARIA": {
+    "name": "ARIA",
+    "description": "ARIA (Accessible Rich Internet Applications) - a set of attributes for HTML and JavaScript aimed at improving web application accessibility for users with disabilities."
+  },
+  "Responsive": {
+    "name": "Responsive",
+    "description": "Approach where a website is designed to automatically adapt and look optimal on various devices and screens, whether it's a computer, tablet, or smartphone."
+  },
+  "Python": {
+    "name": "Python",
+    "description": "Popular and easily readable programming language."
+  },
+  "Django": {
+    "name": "Django",
+    "description": "High-level framework for web development in the Python language."
+  },
+  "PostgreSQL": {
+    "name": "PostgreSQL",
+    "description": "Powerful and open-source database management system often used in web development."
+  },
+  "DRF": {
+    "name": "Django REST Framework",
+    "description": "An extension for the Django framework specifically designed for creating web services and APIs."
+  },
+  "NextJS": {
+    "name": "NextJS",
+    "description": "Framework for building web applications based on React. It provides convenient tools for creating fast and scalable applications, including pre-rendering, routing, and server-side rendering, improving performance and user experience."
+  },
+  "Figma": {
+    "name": "Figma",
+    "description": "Online tool for designing interfaces, allowing the creation of layouts, prototypes, and real-time collaboration."
+  },
+  "Photoshop": {
+    "name": "Adobe Photoshop",
+    "description": "Software for editing and processing images."
+  },
+  "Framer": {
+    "name": "Framer",
+    "description": "Online tool for designing and prototyping interfaces."
+  },
+  "NodeJS": {
+    "name": "NodeJS",
+    "description": "Runtime environment that allows running JavaScript code on the server, not just in the browser."
+  },
+  "Git": {
+    "name": "Git",
+    "description": "Distributed version control system that helps web developers track changes in code, collaborate with other developers, and manage project history."
+  },
+  "Puppetteer": {
+    "name": "Puppetteer",
+    "description": "A set of tools for automating interactions with web pages. Web developers can use Puppeteer to create scripts that can open browsers, navigate pages, perform actions like form filling, and extract data, which is useful, for example, for testing and web scraping."
+  },
+  "DiscordAPI": {
+    "name": "Discord API",
+    "description": "A set of interfaces and methods provided by Discord, a communication platform. Web developers can use this API to create bots and integrations, enabling automation of actions, managing messages, and interacting with users on Discord servers."
+  },
+  "Vercel": {
+    "name": "Vercel",
+    "description": "Cloud platform that allows developers to deploy and host web applications and sites."
+  },
+  "Jest": {
+    "name": "Jest",
+    "description": "Popular framework for testing JavaScript code."
+  },
+  "YandexCloud": {
+    "name": "Yandex Cloud",
+    "description": "Cloud platform providing infrastructure and services for deploying, hosting, and scaling web applications and services."
+  },
+  "Midjourney": {
+    "name": "Midjourney",
+    "description": "Neural network that generates images based on textual descriptions."
+  },
+  "ChatGPT": {
+    "name": "ChatGPT",
+    "description": "An artificial intelligence model capable of generating textual responses based on user input."
+  },
+  "Discord bot": "Discord bot for our community server"
 }

@@ -1,6 +1,6 @@
 interface IProject {
   name: string
-  link: string
+  link: string | null
 }
 
 export interface ISkill {

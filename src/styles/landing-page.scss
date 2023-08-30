@@ -1,3 +1,19 @@
+.sticky-header {
+  animation: fadeIn 0.3s;
+
+  position: sticky;
+  top: 0;
+  z-index: 5;
+
+  background-color: var(--background-color);
+  background-image: linear-gradient(
+    to bottom,
+    $primary-300-alpha-5,
+    $primary-300-alpha-5
+  );
+  box-shadow: var(--header-shadow);
+}
+
 .hero-section {
   display: flex;
   flex-direction: column;
@@ -151,7 +167,6 @@
 .skills-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
 }
 
 .skills-category {
@@ -159,4 +174,12 @@
 
   padding: 1.75rem;
   height: min-content;
+}
+
+.typewriter-overlay {
+  background-color: var(--background-color);
+}
+
+.sticky-header .typewriter-overlay {
+  background-image: var(--background-dark-color);
 }

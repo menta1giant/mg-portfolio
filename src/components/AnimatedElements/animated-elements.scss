@@ -101,8 +101,7 @@
   border: 1px solid rgb(0, 0, 0, 0.7);
   border-radius: 10px;
   box-shadow: 0 4px #999;
-
-  z-index: 10;
+  color: $white-700;
 
   &--active {
     box-shadow: 0 1px #3a3a3a;

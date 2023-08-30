@@ -48,16 +48,28 @@ const Skill: React.FC<ISkill & SkillsProps> = ({
         <span>{localizedSkillName}</span>
       </button>
       {isAccordionOpened && (
-        <div className={styles['skill__body']}>
+        <div className={`flex-gap-medium flex-column ${styles['skill__body']}`}>
           <p>{localizedSkillDescription}</p>
-          <span className="text-large fw-medium">{t('where-used')}</span>
-          <ul>
-            {projectsUsed.map((project) => (
-              <li className="li" key={project.name}>
-                <a href={project.link}>{translator(project.name)}</a>
-              </li>
-            ))}
-          </ul>
+          <div className="flex-gap-small flex-column">
+            <span className="text-large fw-medium">{t('where-used')}</span>
+            {projectsUsed.length ? (
+              <ul>
+                {projectsUsed.map((project) => (
+                  <li className="li" key={project.name}>
+                    {project.link ? (
+                      <a href={project.link} target="_blank">
+                        {translator(project.name)}
+                      </a>
+                    ) : (
+                      translator(project.name)
+                    )}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <span className="text-white-500">{t('no-projects')}</span>
+            )}
+          </div>
         </div>
       )}
     </article>

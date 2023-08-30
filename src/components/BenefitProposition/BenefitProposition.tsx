@@ -5,6 +5,12 @@ import { useEffect, useRef, useState } from 'react'
 import { PACKAGE_IMPORTED_EVENT } from '@/utils/customEvent'
 import { useTranslations } from 'next-intl'
 
+import {
+  getLocalStorageDataByKey,
+  setLocalStorageData,
+  LANDING_PAGE_VISITED,
+} from '@/utils/localStorage'
+
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 const BenefitProposition: React.FC = () => {
@@ -40,6 +46,8 @@ const BenefitProposition: React.FC = () => {
 
       if (iteration >= textContainer.current!.dataset.value!.length) {
         interval && clearInterval(interval)
+
+        setLocalStorageData(LANDING_PAGE_VISITED, String(true))
       }
 
       iteration += 1 / 2
@@ -48,6 +56,17 @@ const BenefitProposition: React.FC = () => {
 
   useEffect(() => {
     document.addEventListener(PACKAGE_IMPORTED_EVENT, initiateScramblePhrase)
+
+    const hasBeenVisited = Boolean(
+      getLocalStorageDataByKey(LANDING_PAGE_VISITED),
+    )
+
+    if (hasBeenVisited) {
+      setTexts({
+        scrambled: '',
+        unscrambled: phrase,
+      })
+    }
 
     return () => {
       document.removeEventListener(
