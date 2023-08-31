@@ -1,2 +1,5 @@
 export const NERIF_LINK = 'https://nerif-vue.vercel.app/'
 export const NERIF_REPO_LINK = 'https://github.com/menta1giant/nerif_vue'
+export const TELEGRAM_LINK = 'https://t.me/menta1giant'
+export const LINKEDIN_LINK = 'https://linkedin.com'
+export const GITHUB_LINK = 'https://github.com/menta1giant'

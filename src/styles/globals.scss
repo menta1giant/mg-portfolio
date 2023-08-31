@@ -70,6 +70,10 @@ a {
   text-decoration: none;
 }
 
+b {
+  @include fw-semi-bold;
+}
+
 p {
   @include text-large;
   @include fw-light;

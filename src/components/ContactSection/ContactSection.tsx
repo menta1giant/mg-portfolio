@@ -4,8 +4,14 @@ import SectionHeader from '../SectionHeader/SectionHeader'
 import FormField from '../FormField/FormField'
 import Button from '../Button/Button'
 import CopyEmail from '../CopyEmail/CopyEmail'
-
+import Link from 'next/link'
 import { useTranslations } from 'next-intl'
+import {
+  TELEGRAM_LINK,
+  GITHUB_LINK,
+  LINKEDIN_LINK,
+} from '@/utils/externalLinks'
+import ContactForm from '../ContactForm/ContactForm'
 
 const ContactSection: React.FC = () => {
   const t = useTranslations('Contact')
@@ -27,20 +33,19 @@ const ContactSection: React.FC = () => {
               {t('socials-label')}
             </h3>
             <div className="flex-gap-medium text-large text-heading">
-              <i className="fa-brands fa-telegram"></i>
-              <i className="fa-brands fa-linkedin"></i>
-              <i className="fa-brands fa-github"></i>
+              <Link href={TELEGRAM_LINK} target="_blank">
+                <i className="fa-brands fa-telegram"></i>
+              </Link>
+              <Link href={LINKEDIN_LINK} target="_blank">
+                <i className="fa-brands fa-linkedin"></i>
+              </Link>
+              <Link href={GITHUB_LINK} target="_blank">
+                <i className="fa-brands fa-github"></i>
+              </Link>
             </div>
           </div>
         </div>
-        <div className="flex-column flex-gap-extra-large">
-          <FormField label={t('name-label')} />
-          <FormField label={t('email-label')} />
-          <FormField type="textarea" label={t('message-label')} />
-          <Button type="primary" size="medium" className="fluid">
-            {t('send-button-text')}
-          </Button>
-        </div>
+        <ContactForm />
       </div>
     </section>
   )

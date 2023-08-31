@@ -4,7 +4,6 @@ import Image from 'next/image'
 
 import SectionHeader from '../SectionHeader/SectionHeader'
 import Button from '../Button/Button'
-import TransparentButton from '../TransparentButton/TransparentButton'
 
 import { useTranslations } from 'next-intl'
 
@@ -43,22 +42,19 @@ const FeaturedProjectSection: React.FC = () => {
                   height={LOGO_SIZE_SMALL}
                 />
                 <Image
-                  src="/react-logo.svg"
-                  alt={tc('logo-alt', { logoOwner: 'React' })}
-                  title="React"
+                  src="/scss-logo.svg"
+                  alt={tc('logo-alt', { logoOwner: 'SCSS' })}
+                  title="SCSS"
                   width={LOGO_SIZE_SMALL}
                   height={LOGO_SIZE_SMALL}
                 />
                 <Image
-                  src="/ts-logo.svg"
-                  alt={tc('logo-alt', { logoOwner: 'Typescript' })}
-                  title="Typescript"
+                  src="/django-logo.png"
+                  alt={tc('logo-alt', { logoOwner: 'Django' })}
+                  title="Django"
                   width={LOGO_SIZE_SMALL}
                   height={LOGO_SIZE_SMALL}
                 />
-                <TransparentButton>
-                  {t('and-n-more', { value: 9 })}
-                </TransparentButton>
               </div>
               <div>
                 <p>{t('paragraph1')}</p>

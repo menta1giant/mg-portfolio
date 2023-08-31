@@ -6,15 +6,22 @@ type FieldType = 'textarea' | 'text' | 'email'
 
 interface IFormFieldProps {
   label: string
+  name: string
   type?: FieldType
 }
 
-const FormField: React.FC<IFormFieldProps> = ({ label, type = 'text' }) => {
+const FormField: React.FC<
+  IFormFieldProps & React.HTMLProps<HTMLInputElement | HTMLTextAreaElement>
+> = ({ type = 'text', label, ...props }) => {
   return (
     <div className={styles['mg-form-field']}>
       <label>
         <span>{label}</span>
-        {type === 'textarea' ? <Textarea /> : <Input type={type} />}
+        {type === 'textarea' ? (
+          <Textarea {...props} />
+        ) : (
+          <Input type={type} {...props} />
+        )}
       </label>
     </div>
   )
