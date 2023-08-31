@@ -1,11 +1,11 @@
 'use client'
 
 import { useRef, useEffect, useMemo, useCallback } from 'react'
-import styles from './header.module.scss'
+import styles from '../Header/header.module.scss'
 import Link from 'next/link'
 import { LOGO_CLICKED_EVENT } from '@/utils/customEvent'
 import { useState } from 'react'
-import processTextNodesSequentially from './typewriterHelper'
+import processTextNodesSequentially from '../../utils/typewriterHelper'
 import {
   getLocalStorageDataByKey,
   LANDING_PAGE_VISITED,

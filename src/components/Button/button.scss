@@ -71,36 +71,32 @@
     background-color: var(--primary-green-button-background-color);
 
     color: var(--primary-button-color);
+
+    &:focus-visible {
+      outline-color: var(--primary-green-button-background-color);
+    }
   }
 
   &--transparent {
-    box-shadow: none;
-
-    text-transform: unset;
-
-    padding-left: 0px;
-    padding-right: 0px;
-    background: transparent;
-    color: $primary-700;
-
-    &:focus,
-    &:hover,
-    &:active {
-      box-shadow: none;
-      text-transform: unset;
-    }
-
     &-green {
       padding-left: 1em;
       padding-right: 1em;
       color: var(--transparent-green-button-color);
       box-shadow: none;
+
+      &:focus-visible {
+        outline-color: $primary-500-alpha-60;
+      }
     }
   }
 
   &--secondary {
     background-color: var(--secondary-button-background-color);
     color: var(--secondary-button-color);
+
+    &:focus-visible {
+      outline-color: $primary-500-alpha-60;
+    }
   }
 
   &:hover {
@@ -110,6 +106,10 @@
       height: 300%;
       width: 300%;
     }
+  }
+
+  &:active {
+    color: $white-400;
   }
 
   /* &:active {

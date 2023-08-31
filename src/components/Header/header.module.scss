@@ -11,6 +11,8 @@
   max-width: min(12vw, 3rem);
   height: min(12vw, 3rem);
   aspect-ratio: 1;
+
+  cursor: pointer;
 }
 
 .navigation {
@@ -47,6 +49,18 @@
   span,
   a {
     position: relative;
+  }
+
+  a {
+    &:hover {
+      color: var(--text-highlight-color);
+    }
+
+    &:focus-visible {
+      text-decoration: underline;
+      text-decoration-color: currentColor;
+      text-underline-offset: 4px;
+    }
   }
 
   @media screen and (min-width: $mobile-breakpoint) and (max-width: $laptop-breakpoint) {

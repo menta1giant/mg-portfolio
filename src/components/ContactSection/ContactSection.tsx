@@ -11,7 +11,7 @@ const ContactSection: React.FC = () => {
   const t = useTranslations('Contact')
 
   return (
-    <section className="flex-column flex-gap-large">
+    <section id="contact" className="flex-column flex-gap-large">
       <SectionHeader title={t('heading')} description={t('subheading')} />
       <div className="grid-50-50">
         <div className="flex-column flex-gap-large">

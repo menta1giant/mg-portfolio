@@ -18,9 +18,9 @@ export default function BasicMenu() {
   }
 
   return (
-    <div>
+    <div className="mobile">
       <TransparentButton onClick={handleClick}>
-        <div className="mobile text-h2">{`{ ... }`}</div>
+        <div className="text-h2">{`{ ... }`}</div>
       </TransparentButton>
       <Popover
         id="basic-menu"

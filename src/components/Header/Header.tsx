@@ -4,7 +4,7 @@ import styles from './header.module.scss'
 
 import Image from 'next/image'
 import Button from '@/components/Button/Button'
-import Navigation from './Navigation'
+import Navigation from '../Navigation/Navigation'
 import ToggleLanguageButton from '@/components/ToggleLanguageButton/ToggleLanguageButton'
 import AnimatedElements from '@/components/AnimatedElements/AnimatedElements'
 import { applyStickyHeader } from '@/utils/header'
@@ -50,7 +50,11 @@ export default function Header() {
         />
         <Navigation />
         <div className={styles.buttons}>
-          <Button type="primary-green">
+          <Button
+            type="primary-green"
+            useLink
+            linkProps={{ href: '#contact', target: '_self' }}
+          >
             <span>GET IN TOUCH</span>
           </Button>
           <ToggleThemeButton />

@@ -32,10 +32,20 @@ const HeroSection: React.FC = () => {
             <SectionHeader title={t('heading')} description={t('subheading')} />
             <p>{t('description')}</p>
             <div className="cta-container">
-              <Button type="primary" size="large">
+              <Button
+                type="primary"
+                size="large"
+                useLink
+                linkProps={{ href: '#featured-project', target: '_self' }}
+              >
                 {t('primary-cta')}
               </Button>
-              <Button type="secondary" size="large">
+              <Button
+                type="secondary"
+                size="large"
+                useLink
+                linkProps={{ href: '#contact', target: '_self' }}
+              >
                 {t('secondary-cta')}
               </Button>
             </div>

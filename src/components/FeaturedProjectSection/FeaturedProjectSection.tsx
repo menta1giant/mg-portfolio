@@ -17,7 +17,7 @@ const FeaturedProjectSection: React.FC = () => {
   const tc = useTranslations('Common')
 
   return (
-    <section className="featured-project-section">
+    <section id="featured-project" className="featured-project-section">
       <div className="flex-column flex-gap-large">
         <SectionHeader title={t('heading')} description={t('subheading')} />
         <div className="flex-column flex-gap-large">

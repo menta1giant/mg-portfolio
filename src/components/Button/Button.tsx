@@ -48,7 +48,7 @@ const Button: React.FC<CommonButtonProps> = ({
   className = '',
   size = 'medium',
   type = 'primary',
-  linkProps = { href: '/' },
+  linkProps = { href: '/', target: '_blank' },
   useLink = false,
 }) => {
   const commonProps = useMemo(() => {
@@ -62,7 +62,7 @@ const Button: React.FC<CommonButtonProps> = ({
 
   if (useLink) {
     return (
-      <Link {...commonProps} {...linkProps} target="_blank">
+      <Link {...commonProps} target="_blank" {...linkProps}>
         <ButtonContent>{children}</ButtonContent>
       </Link>
     )

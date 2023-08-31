@@ -29,7 +29,9 @@
 
     cursor: pointer;
 
-    &:hover {
+    &:focus-visible,
+    &:hover,
+    &:active {
       background: $primary-500-alpha-15;
     }
   }
@@ -45,6 +47,11 @@
 
     li a {
       margin-right: 0.5rem;
+
+      &:focus-visible {
+        text-decoration: underline;
+        text-decoration-color: currentColor;
+      }
     }
   }
 }
