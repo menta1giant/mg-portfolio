@@ -9,6 +9,7 @@ import TransparentButton from '../TransparentButton/TransparentButton'
 import { useTranslations } from 'next-intl'
 
 import { LOGO_SIZE_SMALL } from '@/utils/image'
+import { NERIF_LINK, NERIF_REPO_LINK } from '@/utils/externalLinks'
 
 const FeaturedProjectSection: React.FC = () => {
   const t = useTranslations('FeaturedProject')
@@ -64,11 +65,27 @@ const FeaturedProjectSection: React.FC = () => {
                 <p>{t('paragraph2')}</p>
               </div>
               <div className="cta-container">
-                <Button type="primary" size="medium">
-                  {t('primary-cta')}
+                <Button
+                  type="primary"
+                  size="medium"
+                  linkProps={{ href: NERIF_LINK }}
+                  useLink
+                >
+                  {t('primary-cta')}{' '}
+                  <div className="icon-wrapper">
+                    <i className="fa-solid fa-external-link text-medium"></i>
+                  </div>
                 </Button>
-                <Button type="secondary" size="medium">
-                  {t('secondary-cta')} GH
+                <Button
+                  type="secondary"
+                  size="medium"
+                  linkProps={{ href: NERIF_REPO_LINK }}
+                  useLink
+                >
+                  {t('secondary-cta')}
+                  <div className="icon-wrapper">
+                    <i className="fa-brands fa-github"></i>
+                  </div>
                 </Button>
               </div>
             </div>

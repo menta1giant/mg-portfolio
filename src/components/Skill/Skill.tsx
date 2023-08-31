@@ -36,7 +36,7 @@ const Skill: React.FC<ISkill & SkillsProps> = ({
       }`}
     >
       <button
-        className={styles['skill__title']}
+        className={`flex-gap-medium ${styles['skill__title']}`}
         onClick={handleToggleAccordion}
       >
         <Image
@@ -57,9 +57,12 @@ const Skill: React.FC<ISkill & SkillsProps> = ({
                 {projectsUsed.map((project) => (
                   <li className="li" key={project.name}>
                     {project.link ? (
-                      <a href={project.link} target="_blank">
-                        {translator(project.name)}
-                      </a>
+                      <>
+                        <a href={project.link} target="_blank">
+                          {translator(project.name)}
+                        </a>
+                        <i className="fa-solid fa-external-link text-extra-small text-white-500"></i>
+                      </>
                     ) : (
                       translator(project.name)
                     )}

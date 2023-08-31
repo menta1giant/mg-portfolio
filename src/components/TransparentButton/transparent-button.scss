@@ -8,8 +8,9 @@
 
 .mg-transparent-button {
   text-align: center;
-  align-self: flex-start;
   position: relative;
+
+  width: max-content;
 
   font-family: $ff-cta;
   font-weight: $fw-semi-bold;

@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useMemo, useCallback } from 'react'
 import styles from './header.module.scss'
+import Link from 'next/link'
 import { LOGO_CLICKED_EVENT } from '@/utils/customEvent'
 import { useState } from 'react'
 import processTextNodesSequentially from './typewriterHelper'
@@ -9,6 +10,7 @@ import {
   getLocalStorageDataByKey,
   LANDING_PAGE_VISITED,
 } from '@/utils/localStorage'
+import MobileMenu from '@/components/MobileMenu/MobileMenu'
 
 export default function Navigation() {
   const navigation = useRef<HTMLDivElement>(null)
@@ -55,34 +57,37 @@ export default function Navigation() {
   }, [initiateTypewriter])
 
   return (
-    <div
-      className={`${shouldHideNavigation ? 'visually-hidden' : ''} ${
-        styles.navigation
-      }`}
-      ref={navigation}
-    >
-      <span>import </span>
-      <span className="text-large text-heading">{`{ `}</span>
-      <nav className="text-large text-heading">
-        <ul>
-          <li>
-            <a>jobExperience, </a>
-          </li>
-          <li>
-            <a>hardSkills, </a>
-          </li>
-          <li>
-            <a>softSkills </a>
-          </li>
-        </ul>
-      </nav>
-      <span className="text-large text-heading">{`} `}</span>
-      <div className="nowrap inline-flex">
-        <span>from </span>
-        <span id="package-name" className="text-heading text-large">
-          &quot;MikhailGostev&quot;
-        </span>
+    <>
+      <div
+        className={`${shouldHideNavigation ? 'visually-hidden' : ''} ${
+          styles.navigation
+        } desktop`}
+        ref={navigation}
+      >
+        <span>import </span>
+        <span className="text-large text-heading">{`{ `}</span>
+        <nav className="text-large text-heading">
+          <ul>
+            <li>
+              <Link href="#job-experience">jobExperience, </Link>
+            </li>
+            <li>
+              <Link href="#hard-skills">hardSkills, </Link>
+            </li>
+            <li>
+              <Link href="#soft-skills">softSkills </Link>
+            </li>
+          </ul>
+        </nav>
+        <span className="text-large text-heading">{`} `}</span>
+        <div className="nowrap inline-flex">
+          <span>from </span>
+          <span id="package-name" className="text-heading text-large">
+            &quot;MikhailGostev&quot;
+          </span>
+        </div>
       </div>
-    </div>
+      <MobileMenu />
+    </>
   )
 }

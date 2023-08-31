@@ -9,7 +9,7 @@ const HardSkillsSection: React.FC<PropsWithChildren> = ({ children }) => {
   const t = useTranslations('HardSkills')
 
   return (
-    <section className="skills-section">
+    <section id="hard-skills" className="skills-section">
       <div className="flex-column flex-gap-large">
         <SectionHeader title={t('heading')} description={t('subheading')} />
         {children}

@@ -92,6 +92,10 @@ $lh-body: 1.6;
   letter-spacing: 0.05em;
 }
 
+@mixin text-primary {
+  font-family: $ff-primary;
+}
+
 @mixin text-display {
   font-family: $ff-accent;
 }

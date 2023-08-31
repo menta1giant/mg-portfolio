@@ -1,6 +1,9 @@
 .copy-email {
   @include fw-regular;
   @include text-medium;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 
   width: max-content;
   padding: 1rem;
@@ -8,8 +11,4 @@
   color: $white-500;
   border: 1px solid var(--input-border-color);
   border-radius: $border-radius-small;
-
-  i {
-    margin-left: 1.5rem;
-  }
 }

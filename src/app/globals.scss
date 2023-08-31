@@ -23,6 +23,8 @@
   --input-border-color-focus: #{$primary-500-alpha-60};
   --input-label-color: #{$white-500};
   --input-label-focus-color: #{$primary-700};
+
+  --bg-popover: #{$white-200};
 }
 
 [data-theme='dark'] {
@@ -37,6 +39,8 @@
   --input-background-color-disabled: #{$white-700};
   --input-border-color: #{$white-600};
   --input-label-focus-color: #{$primary-300};
+
+  --bg-popover: #{$white-700};
 }
 
 * {
@@ -47,6 +51,8 @@
 
 html {
   font-size: clamp(62.5%, 1vw, 100%);
+
+  scroll-behavior: smooth;
 }
 
 body {

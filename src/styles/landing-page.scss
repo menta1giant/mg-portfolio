@@ -107,6 +107,13 @@
   @media screen and (max-width: $tablet-breakpoint) {
     flex-wrap: wrap;
   }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    button,
+    a {
+      width: 100%;
+    }
+  }
 }
 
 .job-experience-section {

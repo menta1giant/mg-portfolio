@@ -12,7 +12,7 @@ const JobExperienceSection: React.FC = () => {
   const tm = useTranslations('Months')
 
   return (
-    <section className="grid-50-50 job-experience-section">
+    <section id="job-experience" className="grid-50-50 job-experience-section">
       <div className="flex-column flex-gap-large">
         <SectionHeader title={t('heading')} description={t('subheading')} />
         <div className="flex-column flex-gap-large">

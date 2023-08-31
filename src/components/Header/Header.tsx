@@ -45,13 +45,13 @@ export default function Header() {
           alt="Logo"
           width={48}
           height={48}
+          className={styles['logo']}
           priority
         />
         <Navigation />
         <div className={styles.buttons}>
           <Button type="primary-green">
-            <span className="desktop">GET IN TOUCH</span>
-            <span className="mobile">{'==>'}</span>
+            <span>GET IN TOUCH</span>
           </Button>
           <ToggleThemeButton />
           <ToggleLanguageButton />

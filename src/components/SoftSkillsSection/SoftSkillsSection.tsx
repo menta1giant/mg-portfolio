@@ -10,7 +10,7 @@ const SoftSkillsSection: React.FC = () => {
   const t = useTranslations('SoftSkills')
 
   return (
-    <section className="grid-50-50">
+    <section id="soft-skills" className="grid-50-50">
       <div className="flex-column flex-gap-large">
         <SectionHeader title={t('heading')} description={t('subheading')} />
         <div>

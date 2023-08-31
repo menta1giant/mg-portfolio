@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import Link from 'next/link'
 
-export type ButtonSizes = 'medium' | 'large'
+export type ButtonSizes = 'medium' | 'large' | 'extra-large' | 'h2'
 
 export interface ButtonProps {
   children: ReactNode
@@ -9,5 +9,7 @@ export interface ButtonProps {
   size?: ButtonSizes
   useLink?: boolean
   linkProps?: React.ComponentProps<typeof Link>
-  onClick?: () => void
+  onClick?: (
+    event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>,
+  ) => void
 }

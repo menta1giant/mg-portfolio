@@ -37,7 +37,7 @@ const ButtonContent: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <>
       <span className="mg-button__overlay"></span>
-      <div>{children}</div>
+      <div className="flex-gap-medium flex-center">{children}</div>
     </>
   )
 }
@@ -62,7 +62,7 @@ const Button: React.FC<CommonButtonProps> = ({
 
   if (useLink) {
     return (
-      <Link {...commonProps} {...linkProps}>
+      <Link {...commonProps} {...linkProps} target="_blank">
         <ButtonContent>{children}</ButtonContent>
       </Link>
     )

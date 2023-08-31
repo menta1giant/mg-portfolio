@@ -1,3 +1,7 @@
+.text-extra-small {
+  @include text-extra-small;
+}
+
 .text-small {
   @include text-small;
 }
@@ -28,6 +32,10 @@
 
 .text-bleak {
   color: var(--text-bleak-color);
+}
+
+.text-primary {
+  @include text-primary;
 }
 
 .text-monospace {
@@ -120,13 +128,13 @@
 
 @media screen and (max-width: $mobile-breakpoint) {
   .desktop {
-    display: none;
+    display: none !important;
   }
 }
 
 @media screen and (min-width: $mobile-breakpoint) {
   .mobile {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -139,6 +147,12 @@
     grid-template-columns: 1fr;
     gap: 4rem;
   }
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .flex-column {
@@ -203,4 +217,8 @@ strong.highlight {
 
 .icon-wrapper {
   line-height: 0;
+}
+
+.bg-popover {
+  background: var(--bg-popover);
 }

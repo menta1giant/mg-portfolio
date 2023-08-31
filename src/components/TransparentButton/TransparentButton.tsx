@@ -1,6 +1,7 @@
 'use client'
 
-import React from 'react'
+import React, { useMemo } from 'react'
+import Link from 'next/link'
 import './transparent-button.scss'
 import { ButtonProps } from '@/interfaces/button'
 
@@ -9,21 +10,29 @@ const TransparentButton: React.FC<ButtonProps> = ({
   onClick,
   className = '',
   size = 'medium',
-  as = 'button',
+  linkProps = { href: '/' },
+  useLink = false,
 }) => {
-  const that = {
-    as,
-  }
+  const commonProps = useMemo(() => {
+    return {
+      className: `mg-transparent-button text-${size} ${className}`,
+      onClick,
+    }
+  }, [size, className, onClick])
 
-  return (
-    <that.as
-      className={`mg-transparent-button text-${size} ${className}`}
-      onClick={onClick}
-    >
-      <span className="mg-button__overlay"></span>
-      <div>{children}</div>
-    </that.as>
-  )
+  if (useLink) {
+    return (
+      <Link {...commonProps} {...linkProps}>
+        <div>{children}</div>
+      </Link>
+    )
+  } else {
+    return (
+      <button {...commonProps}>
+        <div>{children}</div>
+      </button>
+    )
+  }
 }
 
 export default TransparentButton
