@@ -1,7 +1,6 @@
 import '@/styles/landing-page.scss'
 
 import React from 'react'
-import { useLocale } from 'next-intl'
 
 import HeroSection from '@/components/HeroSection/HeroSection'
 import JobExperienceSection from '@/components/JobExperienceSection/JobExperienceSection'
@@ -12,15 +11,13 @@ import SoftSkillsSection from '@/components/SoftSkillsSection/SoftSkillsSection'
 import ContactSection from '@/components/ContactSection/ContactSection'
 
 const Home: React.FC = () => {
-  const locale = useLocale()
-
   return (
     <>
       <HeroSection />
       <JobExperienceSection />
       <FeaturedProjectSection />
       <HardSkillsSection>
-        <SkillsCategoriesList locale={locale} />
+        <SkillsCategoriesList />
       </HardSkillsSection>
       <SoftSkillsSection />
       <ContactSection />

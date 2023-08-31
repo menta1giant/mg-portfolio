@@ -2,7 +2,7 @@ import Header from '@/components/Header/Header'
 import Footer from '@/components/Footer/Footer'
 import { Providers } from '@/lib/providers'
 
-import { ReactNode } from 'react'
+import { ReactNode, useEffect } from 'react'
 import { createTranslator } from 'next-intl'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
@@ -24,6 +24,12 @@ async function getMessages(locale: string) {
   }
 }
 
+async function getSkillsMessages(locale: string) {
+  try {
+    return (await import(`../../messages/${locale}-skills.json`)).default
+  } catch (error) {}
+}
+
 export async function generateMetadata({
   params: { locale },
 }: Props): Promise<Metadata> {
@@ -42,6 +48,9 @@ export default async function LocaleLayout({
   params: { locale },
 }: Props) {
   const messages = await getMessages(locale)
+
+  const skillsMessages = await getSkillsMessages(locale)
+  const cm = { ...messages, a: skillsMessages }
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -75,7 +84,7 @@ export default async function LocaleLayout({
         ></script>
       </head>
       <body>
-        <Providers locale={locale} messages={messages}>
+        <Providers locale={locale} messages={cm}>
           <Header />
           <main>{children}</main>
           <Footer />

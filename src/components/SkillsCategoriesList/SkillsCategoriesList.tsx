@@ -1,7 +1,5 @@
 import SkillsCategory from '../SkillsCategory/SkillsCategory'
 
-import { createTranslator } from 'next-intl'
-
 import { SKILLS_CATEGORIES } from '@/utils/skillsCategory'
 
 async function getSkillsMessages(locale: string) {
@@ -10,20 +8,15 @@ async function getSkillsMessages(locale: string) {
   } catch (error) {}
 }
 
-const SkillsCategoriesList: React.FC<{ locale: string }> = async ({
-  locale,
-}) => {
+const SkillsCategoriesList: React.FC = async () => {
+  //const locale = useAppSelector((state) => state.language.locale)
+  const locale = 'ru'
   const messages = await getSkillsMessages(locale)
 
   return (
     <div className="grid-50-50">
       {SKILLS_CATEGORIES.map((category) => (
-        <SkillsCategory
-          {...category}
-          key={category.name}
-          locale={locale}
-          messages={messages}
-        />
+        <SkillsCategory {...category} key={category.name} locale={locale} />
       ))}
     </div>
   )

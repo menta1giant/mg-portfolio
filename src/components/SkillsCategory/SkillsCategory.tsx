@@ -8,7 +8,6 @@ import { useTranslations, createTranslator } from 'next-intl'
 import { useState, useMemo } from 'react'
 
 interface SkillsCategoryProps {
-  messages: any
   locale: string
 }
 
@@ -16,10 +15,9 @@ const SkillsCategory: React.FC<ISkillsCategory & SkillsCategoryProps> = ({
   name,
   items,
   locale,
-  messages,
 }) => {
   const t = useTranslations('HardSkills')
-  const translator = createTranslator({ locale, messages, onError: () => {} })
+  const ts = useTranslations('a')
 
   const [isListExpanded, setIsListExpanded] = useState(false)
   const isShowMoreButtonShown = useMemo(() => {
@@ -28,16 +26,16 @@ const SkillsCategory: React.FC<ISkillsCategory & SkillsCategoryProps> = ({
 
   return (
     <article className="flex-column flex-gap-large skills-category">
-      <span className="text-h2 fw-semi-bold">{translator(name)}</span>
+      <span className="text-h2 fw-semi-bold">{ts(name)}</span>
       <div className="skills-wrapper">
         {items.slice(0, 3).map((item) => (
-          <Skill {...item} key={item.name} translator={translator}></Skill>
+          <Skill {...item} key={item.name} translator={ts}></Skill>
         ))}
         {isListExpanded &&
           items
             .slice(3)
             .map((item) => (
-              <Skill {...item} key={item.name} translator={translator}></Skill>
+              <Skill {...item} key={item.name} translator={ts}></Skill>
             ))}
       </div>
       {isShowMoreButtonShown && (
