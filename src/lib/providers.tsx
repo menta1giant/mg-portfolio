@@ -6,6 +6,10 @@ import { ThemeProvider } from 'next-themes'
 import { NextIntlClientProvider } from 'next-intl'
 import { setLocale } from '@/lib/redux/slices/languageSlice'
 
+function getMessageFallback({ key }: { key: string }) {
+  return key
+}
+
 /* Instruments */
 import { store } from '@/lib/redux/store'
 import { useEffect } from 'react'
@@ -22,6 +26,7 @@ export const Providers: React.FC<
       locale={locale}
       messages={messages}
       onError={() => ''}
+      getMessageFallback={getMessageFallback}
     >
       <ThemeProvider>
         <Provider store={store}>{children}</Provider>

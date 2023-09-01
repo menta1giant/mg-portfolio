@@ -1,8 +1,6 @@
 'use client'
 
 import SectionHeader from '../SectionHeader/SectionHeader'
-import FormField from '../FormField/FormField'
-import Button from '../Button/Button'
 import CopyEmail from '../CopyEmail/CopyEmail'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'

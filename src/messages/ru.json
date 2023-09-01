@@ -68,7 +68,9 @@
     "name-label": "Имя",
     "email-label": "Email",
     "message-label": "Сообщение",
-    "send-button-text": "Отправить сообщение"
+    "send-button-text": "Отправить сообщение",
+    "contact-form-send-success": "Сообщение отправлено успешно.",
+    "contact-form-send-error": "Произошла ошибка при отправлении сообщения. Попробуйте повторить попытку позже."
   },
   "Footer": {
     "copyright-text": "© 2023 <b>Mikhail Gostev.</b> Все права защищены."

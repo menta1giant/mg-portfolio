@@ -7,6 +7,8 @@ export interface ButtonProps {
   children: ReactNode
   className?: string
   size?: ButtonSizes
+  loading?: boolean
+  disabled?: boolean
   useLink?: boolean
   linkProps?: React.ComponentProps<typeof Link>
   onClick?: (

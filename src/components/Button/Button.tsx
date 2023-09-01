@@ -48,17 +48,21 @@ const Button: React.FC<CommonButtonProps> = ({
   className = '',
   size = 'medium',
   type = 'primary',
+  loading = false,
+  disabled = false,
   linkProps = { href: '/', target: '_blank' },
   useLink = false,
 }) => {
   const commonProps = useMemo(() => {
     return {
-      className: `mg-button mg-button--${size} mg-button--${type} ${className}`,
+      className: `mg-button mg-button--${size} mg-button--${type} ${className} ${
+        loading ? 'mg-button--loading' : ''
+      } ${disabled ? 'mg-button--disabled' : ''}`,
       onClick,
       onMouseEnter: handleChange,
       onMouseLeave: handleChange,
     }
-  }, [size, type, className, onClick])
+  }, [size, type, className, onClick, loading, disabled])
 
   if (useLink) {
     return (
