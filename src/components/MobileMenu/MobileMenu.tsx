@@ -2,7 +2,6 @@ import './mobile-menu.scss'
 
 import React from 'react'
 import Popover from '@mui/material/Popover'
-import MenuItem from '@mui/material/MenuItem'
 import TransparentButton from '../TransparentButton/TransparentButton'
 
 export default function BasicMenu() {

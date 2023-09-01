@@ -4,7 +4,6 @@ import { useState } from 'react'
 import FormField from '../FormField/FormField'
 import Button from '../Button/Button'
 import { useTranslations } from 'next-intl'
-import Box from '@mui/material/Box'
 import Alert from '@mui/material/Alert'
 import Snackbar from '@mui/material/Snackbar'
 

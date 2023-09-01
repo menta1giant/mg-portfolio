@@ -24,7 +24,7 @@ const ContactSection: React.FC = () => {
             <h3 className="text-large fw-medium text-heading">
               {t('copy-email-label')}
             </h3>
-            <CopyEmail email="mikhail-gostev.dev.gmail.com" />
+            <CopyEmail email="mikhail.gostev.dev@gmail.com" />
           </div>
           <div className="flex-column flex-gap-medium">
             <h3 className="text-large fw-medium text-heading">

@@ -12,7 +12,6 @@ interface SkillsProps {
 }
 
 const Skill: React.FC<ISkill & SkillsProps> = ({
-  name,
   id,
   logo,
   projectsUsed,

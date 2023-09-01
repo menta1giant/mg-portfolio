@@ -4,8 +4,6 @@ const nodemailer = require('nodemailer')
 export async function POST(req: NextRequest) {
   const { name, email, message } = await req.json()
 
-  console.log({ name, email, message })
-
   try {
     const transporter = nodemailer.createTransport({
       service: 'Gmail',

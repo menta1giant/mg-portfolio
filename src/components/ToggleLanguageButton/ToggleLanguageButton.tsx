@@ -15,7 +15,6 @@ const ToggleLanguageButton: React.FC = () => {
   const t = useTranslations('Header')
 
   function toggleLanguage() {
-    console.log({ pathname, locale })
     startTransition(() => {
       router.replace(pathname, { locale: locale === 'ru' ? 'en' : 'ru' })
     })
