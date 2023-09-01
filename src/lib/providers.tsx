@@ -1,6 +1,5 @@
 'use client'
 
-/* Core */
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'next-themes'
 import { NextIntlClientProvider } from 'next-intl'
@@ -10,7 +9,6 @@ function getMessageFallback({ key }: { key: string }) {
   return key
 }
 
-/* Instruments */
 import { store } from '@/lib/redux/store'
 import { useEffect } from 'react'
 
