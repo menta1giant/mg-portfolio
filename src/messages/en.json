@@ -5,7 +5,7 @@
     "change-language-button-tooltip": "Switch language to {language}"
   },
   "Hero": {
-    "description": "I'm a talented developer from Moscow. I know how to make beautiful and accessible websites. I have more than 4 years of coding behing my back along with a handful of projects.",
+    "description": "I am a talented web developer from Moscow. I create beautiful and accessible websites that make money. I have over 4 years of coding experience and have worked on several projects.",
     "benefit": "Let's build amazing web",
     "heading": "Mikhail Gostev",
     "subheading": "Fullstack web developer",
@@ -15,14 +15,14 @@
     "feature-1-description": "Including full-time employment",
     "feature-2-title": "Working with",
     "feature-3-title": "Versatile skillset",
-    "feature-3-description": "Following the latest trends"
+    "feature-3-description": "Following the latest trends in dev"
   },
   "JobExperience": {
     "heading": "Job experience",
-    "subheading": "I worked on real projects",
+    "subheading": "Real commercial experience",
     "frontend-developer-job-title": "Frontend Developer",
-    "paragraph1": "Roistat specializes in business analytics.",
-    "paragraph2": "During 16 months working in the company, I had the following responsibilities:",
+    "paragraph1": "Roistat is a business analytics platform that helps track the effectiveness of marketing campaigns.",
+    "paragraph2": "During 1 years and 4 months at the company, I had the following responsibilities:",
     "responsibility1": "Developing new features",
     "responsibility2": "Supporting existing features",
     "responsibility3": "Code refactoring",
@@ -37,30 +37,31 @@
     "role-backend": "Backend",
     "stack": "Stack:",
     "and-n-more": "and {value, number} more...",
-    "paragraph1": "Nerif is an extension of my passion project that was born in late 2020. When I imagined data science as an important part of my future, I started working on an algorithm that would be able to predict the results of CS:GO matches.",
-    "paragraph2": "It has proven to be unsuccessful, so I set a thought experiment: What would happen if it worked and the premise was actually marketable? That’s how Nerif was born.",
+    "paragraph1": "Nerif is a continuation of my project, which I started in 2020. At that time, I saw myself in Data Science and began developing an algorithm that would predict the results of CS:GO matches.",
+    "paragraph2": "Although the algorithm was not successful, I decided to imagine what would happen if it were. So I made a full-fledged website in the form of a SaaS platform with regular predictions, success tracking, etc.",
     "primary-cta": "Visit website",
     "secondary-cta": "Source code",
     "image-alt": "Mobile and desktop presentation of Nerif"
   },
   "HardSkills": {
     "heading": "Hard skills",
-    "subheading": "I know a lot of stuff",
+    "subheading": "I use cutting-edge technologies",
     "show-more": "Show more",
     "where-used": "Where used:",
     "no-projects": "No projects"
   },
   "SoftSkills": {
     "heading": "Soft skills",
-    "subheading": "Chill out",
-    "paragraph1": "I used to tutor English and Computer science, and still haven’t lost passion for <highlight>teaching.</highlight> I love sharing my knowledge with people and I’m quite proficient at it too",
-    "paragraph2": "I enjoy playing board games, whether it be with close friends or random people in an anticafe. Actually, I regularly host board game events there, which requires me to be <highlight>responsible,</highlight> good at <highlight>leadership,</highlight> and get along well with different people.",
+    "subheading": "Team player and a social butterfly",
+    "paragraph1": "I tutored English and computer science in my first year of university, and I still haven't lost interest in <highlight>teaching</highlight>. I love sharing my knowledge, and I'm good at it.",
+    "paragraph2": "I'm a fan of board games and I play them constantly, both with friends and with strangers. In addition, I host board game events, which requires me to be <highlight>responsible</highlight>, show <highlight>leadership</highlight> qualities, and excel at finding common ground with different people.",
     "image-alt": "People gathered for board games"
   },
   "Contact": {
     "heading": "Contact",
     "subheading": "Get in touch",
-    "paragraph1": "I'm always happy to hear about exciting opportunities, and build valuable connections. Let's connect! You can send an e-mail or fill out the form. I’ll add the fourth line for the sake of layout.",
+    "paragraph1": "I am looking for a full-time job. I am also always happy to meet new people and participate in awesome projects.",
+    "paragraph2": "I look forward to meeting you! You can send me an email or fill out a form.",
     "copy-email-label": "Contact me via e-mail",
     "copy-email-tooltip": "Copy email",
     "email-copied-tooltip": "Copied",

@@ -19,7 +19,10 @@ const ContactSection: React.FC = () => {
       <SectionHeader title={t('heading')} description={t('subheading')} />
       <div className="grid-50-50">
         <div className="flex-column flex-gap-large">
-          <p>{t('paragraph1')}</p>
+          <div>
+            <p>{t('paragraph1')}</p>
+            <p>{t('paragraph2')}</p>
+          </div>
           <div className="flex-column flex-gap-medium">
             <h3 className="text-large fw-medium text-heading">
               {t('copy-email-label')}
