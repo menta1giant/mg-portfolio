@@ -95,7 +95,7 @@ export default function ContactForm() {
           anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
         >
           <Alert
-            severity="success"
+            severity="error"
             sx={{ width: '100%' }}
             classes={{
               message: 'text-primary text-medium',
