@@ -51,6 +51,7 @@
       &:focus-visible {
         text-decoration: underline;
         text-decoration-color: currentColor;
+        outline: none;
       }
     }
   }

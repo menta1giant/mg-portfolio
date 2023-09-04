@@ -110,6 +110,11 @@ button {
   cursor: pointer;
 }
 
+a:focus-visible {
+  outline: 2px solid $primary-500;
+  outline-offset: 2px;
+}
+
 i {
   font-size: 1.5em;
   line-height: 1em;
@@ -117,6 +122,5 @@ i {
 
 img {
   object-fit: contain;
-  //max-width: 100%;
   height: auto;
 }

@@ -39,7 +39,7 @@ const Skill: React.FC<ISkill & SkillsProps> = ({
         onClick={handleToggleAccordion}
       >
         <Image
-          src={logo}
+          src={`/logos${logo}`}
           alt={localizedSkillName!.toString()}
           width={LOGO_SIZE_SMALL}
           height={LOGO_SIZE_SMALL}

@@ -59,7 +59,7 @@ const HeroSection: React.FC = () => {
             <ul>
               <li>
                 <Image
-                  src="/vuejs-logo.svg"
+                  src="/logos/vuejs-logo.svg"
                   alt="Vue.js Logo"
                   title="Vue.js"
                   width={LOGO_SIZE}
@@ -69,7 +69,7 @@ const HeroSection: React.FC = () => {
               </li>
               <li>
                 <Image
-                  src="/react-logo.svg"
+                  src="/logos/react-logo.svg"
                   alt="React Logo"
                   title="React"
                   width={LOGO_SIZE}
@@ -79,7 +79,7 @@ const HeroSection: React.FC = () => {
               </li>
               <li>
                 <Image
-                  src="/ts-logo.svg"
+                  src="/logos/ts-logo.svg"
                   alt="Typescript Logo"
                   title="Typescript"
                   width={LOGO_SIZE}

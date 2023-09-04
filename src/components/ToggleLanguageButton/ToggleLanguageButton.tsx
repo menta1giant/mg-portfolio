@@ -1,6 +1,7 @@
 'use client'
 
 import IconButton from '@/components/IconButton/IconButton'
+import './toggle-language-button.scss'
 
 import { useLocale } from 'next-intl'
 import { usePathname, useRouter } from 'next-intl/client'
@@ -27,11 +28,12 @@ const ToggleLanguageButton: React.FC = () => {
       })}
       onClick={toggleLanguage}
     >
-      <i
-        className={`fa-solid ${
-          locale === 'ru' ? 'fa-earth-europe' : 'fa-earth-americas'
-        }`}
-      ></i>
+      <>
+        <i className={`fa-solid fa-globe`}></i>
+        <div className="toggle-language-button__badge">
+          {locale === 'ru' ? 'РУС' : 'ENG'}
+        </div>
+      </>
     </IconButton>
   )
 }

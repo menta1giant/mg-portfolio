@@ -35,21 +35,21 @@ const FeaturedProjectSection: React.FC = () => {
               <div className="featured-project-card__row">
                 <span className="text-large fw-medium">{t('stack')}</span>
                 <Image
-                  src="/vuejs-logo.svg"
+                  src="/logos/vuejs-logo.svg"
                   alt={tc('logo-alt', { logoOwner: 'VueJS' })}
                   title="Vue.js"
                   width={LOGO_SIZE_SMALL}
                   height={LOGO_SIZE_SMALL}
                 />
                 <Image
-                  src="/scss-logo.svg"
+                  src="/logos/scss-logo.svg"
                   alt={tc('logo-alt', { logoOwner: 'SCSS' })}
                   title="SCSS"
                   width={LOGO_SIZE_SMALL}
                   height={LOGO_SIZE_SMALL}
                 />
                 <Image
-                  src="/django-logo.png"
+                  src="/logos/django-logo.png"
                   alt={tc('logo-alt', { logoOwner: 'Django' })}
                   title="Django"
                   width={LOGO_SIZE_SMALL}

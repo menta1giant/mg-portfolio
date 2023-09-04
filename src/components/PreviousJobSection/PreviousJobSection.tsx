@@ -16,7 +16,7 @@ const PreviousJobSection: React.FC<IPreviousJobProps> = ({
       <div>
         <span className="text-h2 fw-semi-bold">{company}</span>
         <Image
-          src="/rs-logo.png"
+          src="/logos/rs-logo.png"
           alt="Roistat Logo"
           title="Roistat"
           width={66}

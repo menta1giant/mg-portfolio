@@ -1,24 +1,15 @@
 'use client'
 
-import { Provider } from 'react-redux'
 import { ThemeProvider } from 'next-themes'
 import { NextIntlClientProvider } from 'next-intl'
-import { setLocale } from '@/lib/redux/slices/languageSlice'
 
 function getMessageFallback({ key }: { key: string }) {
   return key
 }
 
-import { store } from '@/lib/redux/store'
-import { useEffect } from 'react'
-
 export const Providers: React.FC<
   React.PropsWithChildren & React.ComponentProps<typeof NextIntlClientProvider>
 > = ({ children, locale, messages }) => {
-  useEffect(() => {
-    setLocale(locale)
-  }, [])
-
   return (
     <NextIntlClientProvider
       locale={locale}
@@ -26,9 +17,7 @@ export const Providers: React.FC<
       onError={() => ''}
       getMessageFallback={getMessageFallback}
     >
-      <ThemeProvider>
-        <Provider store={store}>{children}</Provider>
-      </ThemeProvider>
+      <ThemeProvider>{children}</ThemeProvider>
     </NextIntlClientProvider>
   )
 }
