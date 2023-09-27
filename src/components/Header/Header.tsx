@@ -8,6 +8,7 @@ import Navigation from '../Navigation/Navigation'
 import ToggleLanguageButton from '@/components/ToggleLanguageButton/ToggleLanguageButton'
 import AnimatedElements from '@/components/AnimatedElements/AnimatedElements'
 import { applyStickyHeader } from '@/utils/header'
+import { useTranslations } from 'next-intl'
 
 import { useRef, useEffect, useCallback } from 'react'
 
@@ -21,6 +22,7 @@ const ToggleThemeButton = dynamic(
 )
 
 export default function Header() {
+  const t = useTranslations('Header')
   const header = useRef<HTMLDivElement>(null)
 
   const checkWindowScroll = useCallback(() => {
@@ -55,7 +57,7 @@ export default function Header() {
             useLink
             linkProps={{ href: '#contact', target: '_self' }}
           >
-            <span>GET IN TOUCH</span>
+            <span>{ t('contact-button-text') }</span>
           </Button>
           <ToggleThemeButton />
           <ToggleLanguageButton />
